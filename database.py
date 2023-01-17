@@ -21,13 +21,15 @@ if cur.fetchone()[0] is None:
     # Creación de la tabla
     cur.execute("""
         CREATE TABLE closed_deals (
+            closed_id SERIAL,
             mql_id VARCHAR(255) NOT NULL,
             seller_id VARCHAR(255) NOT NULL,
             sdr_id VARCHAR(255) NOT NULL,
             sr_id VARCHAR(255) NOT NULL,
             won_date DATE NOT NULL,
             business_segment VARCHAR(255),
-            lead_type VARCHAR(255)
+            lead_type VARCHAR(255),
+            PRIMARY KEY(closed_id)
         )
     """)
     conn.commit()
@@ -47,8 +49,8 @@ if cur.fetchone()[0] is None:
             customer_unique_id VARCHAR(255) NOT NULL,
             customer_zip_code_prefix INTEGER NOT NULL,
             customer_city VARCHAR(255) NOT NULL,
-            customer_state VARCHAR(255) NOT NULL
-
+            customer_state VARCHAR(255) NOT NULL,
+            PRIMARY KEY(customer_id)
         )
     """)
     conn.commit()
@@ -69,7 +71,8 @@ if cur.fetchone()[0] is None:
             geolocation_lat DECIMAL NOT NULL,
             geolocation_lng DECIMAL NOT NULL,
             geolocation_city VARCHAR(255) NOT NULL,
-            geolocation_state VARCHAR(255) NOT NULL
+            geolocation_state VARCHAR(255) NOT NULL,
+            PRIMARY KEY(geolocation_zip_code_prefix)
         )
     """)
     conn.commit()
@@ -89,7 +92,8 @@ if cur.fetchone()[0] is None:
             mql_id VARCHAR(255) NOT NULL,
             first_contact_date DATE NOT NULL,
             landing_page_id	VARCHAR(255) NOT NULL,
-            origin VARCHAR(255)
+            origin VARCHAR(255),
+            PRIMARY KEY(mql_id)
         )
     """)
     conn.commit()
@@ -112,7 +116,8 @@ if cur.fetchone()[0] is None:
             seller_id VARCHAR(255) NOT NULL,
             shipping_limit_date DATE NOT NULL,
             price DECIMAL NOT NULL,
-            freight_value DECIMAL NOT NULL
+            freight_value DECIMAL NOT NULL,
+            PRIMARY KEY(order_item_id)
         )
     """)
     conn.commit()
@@ -129,10 +134,12 @@ if cur.fetchone()[0] is None:
     # Creación de la tabla
     cur.execute("""
         CREATE TABLE order_payments (
+            payment_id SERIAL,
             order_id VARCHAR(255) NOT NULL,
             payment_type VARCHAR(255) NOT NULL,
             payment_installments INTEGER NOT NULL,
-            payment_value DECIMAL NOT NULL
+            payment_value DECIMAL NOT NULL,
+            PRIMARY KEY(payment_id)
         )
     """)
     conn.commit()
@@ -155,7 +162,8 @@ if cur.fetchone()[0] is None:
             review_comment_title VARCHAR(255),
             review_comment_message VARCHAR(255),
             review_creation_date DATE NOT NULL,
-            review_answer_timestamp DATE NOT NULL
+            review_answer_timestamp DATE NOT NULL,
+            PRIMARY KEY(review_id)
         )
     """)
     conn.commit()
@@ -179,7 +187,8 @@ if cur.fetchone()[0] is None:
             order_approved_at DATE,
             order_delivered_carrier_date DATE,
             order_delivered_customer_date DATE,
-            order_estimated_delivery_date DATE NOT NULL
+            order_estimated_delivery_date DATE NOT NULL,
+            PRIMARY KEY(order_id)
         )
     """)
     conn.commit()
@@ -199,7 +208,8 @@ if cur.fetchone()[0] is None:
             seller_id VARCHAR(255) NOT NULL,
             seller_zip_code_prefix INTEGER NOT NULL,
             seller_city VARCHAR(255) NOT NULL,
-            seller_state VARCHAR(255) NOT NULL
+            seller_state VARCHAR(255) NOT NULL,
+            PRIMARY KEY(seller_id)
         )
     """)
     conn.commit()
@@ -222,7 +232,8 @@ if cur.fetchone()[0] is None:
             product_weight_g FLOAT,
             product_length_cm FLOAT,
             product_height_cm FLOAT,
-            product_width_cm FLOAT
+            product_width_cm FLOAT,
+            PRIMARY KEY(product_id)
         )
     """)
     conn.commit()
@@ -240,7 +251,8 @@ if cur.fetchone()[0] is None:
     cur.execute("""
         CREATE TABLE product_category_name_translation (
             product_category_name VARCHAR(255) NOT NULL,
-            product_category_name_english VARCHAR(255) NOT NULL
+            product_category_name_english VARCHAR(255) NOT NULL,
+            PRIMARY KEY(product_category_name_english)
         )
     """)
     conn.commit()
