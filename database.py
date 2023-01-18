@@ -8,9 +8,70 @@ conn = psycopg2.connect(
     password="IHCRtcefMFbJIjUMXuUMtcIfpTAEo5d1"
 )
 
-
 # Creación del cursor
 cur = conn.cursor()
+
+# Verifica si la tabla existe
+cur.execute("""
+    SELECT to_regclass('geolocation')
+""")
+
+if cur.fetchone()[0] is None:
+    # Creación de la tabla
+    cur.execute("""
+        CREATE TABLE geolocation (
+            geolocation_zip_code_prefix INTEGER NOT NULL,
+            geolocation_lat DECIMAL NOT NULL,
+            geolocation_lng DECIMAL NOT NULL,
+            geolocation_city VARCHAR(255) NOT NULL,
+            geolocation_state VARCHAR(255) NOT NULL,
+            PRIMARY KEY(geolocation_zip_code_prefix)
+        )
+    """)
+    conn.commit()
+    print("Tabla creada con éxito")
+else:
+    print("La tabla ya existe")
+
+# Verifica si la tabla existe
+cur.execute("""
+    SELECT to_regclass('marketing_qualified_leads')
+""")
+
+if cur.fetchone()[0] is None:
+    # Creación de la tabla
+    cur.execute("""
+        CREATE TABLE marketing_qualified_leads (
+            mql_id VARCHAR(255) NOT NULL,
+            first_contact_date DATE NOT NULL,
+            origin VARCHAR(255),
+            PRIMARY KEY(mql_id)
+        )
+    """)
+    conn.commit()
+    print("Tabla creada con éxito")
+else:
+    print("La tabla ya existe") 
+    
+# Verifica si la tabla existe
+cur.execute("""
+    SELECT to_regclass('olist_sellers')
+""")
+
+if cur.fetchone()[0] is None:
+    # Creación de la tabla
+    cur.execute("""
+        CREATE TABLE olist_sellers (
+            seller_id VARCHAR(255) NOT NULL,
+            seller_zip_code_prefix INTEGER NOT NULL,
+            PRIMARY KEY(seller_id),
+            FOREIGN KEY(seller_zip_code_prefix) REFERENCES geolocation(geolocation_zip_code_prefix)
+        )
+    """)
+    conn.commit()
+    print("Tabla creada con éxito")
+else:
+    print("La tabla ya existe")    
 
 # Verifica si la tabla existe
 cur.execute("""
@@ -59,72 +120,30 @@ else:
 
 # Verifica si la tabla existe
 cur.execute("""
-    SELECT to_regclass('geolocation')
+    SELECT to_regclass('orders')
 """)
 
 if cur.fetchone()[0] is None:
     # Creación de la tabla
     cur.execute("""
-        CREATE TABLE geolocation (
-            geolocation_zip_code_prefix INTEGER NOT NULL,
-            geolocation_lat DECIMAL NOT NULL,
-            geolocation_lng DECIMAL NOT NULL,
-            geolocation_city VARCHAR(255) NOT NULL,
-            geolocation_state VARCHAR(255) NOT NULL,
-            PRIMARY KEY(geolocation_zip_code_prefix)
-        )
-    """)
-    conn.commit()
-    print("Tabla creada con éxito")
-else:
-    print("La tabla ya existe")
-
-# Verifica si la tabla existe
-cur.execute("""
-    SELECT to_regclass('marketing_qualified_leads')
-""")
-
-if cur.fetchone()[0] is None:
-    # Creación de la tabla
-    cur.execute("""
-        CREATE TABLE marketing_qualified_leads (
-            mql_id VARCHAR(255) NOT NULL,
-            first_contact_date DATE NOT NULL,
-            origin VARCHAR(255),
-            PRIMARY KEY(mql_id)
-        )
-    """)
-    conn.commit()
-    print("Tabla creada con éxito")
-else:
-    print("La tabla ya existe")    
-
-# Verifica si la tabla existe
-cur.execute("""
-    SELECT to_regclass('order_items')
-""")
-
-if cur.fetchone()[0] is None:
-    # Creación de la tabla
-    cur.execute("""
-        CREATE TABLE order_items (
+        CREATE TABLE orders (
             order_id VARCHAR(255) NOT NULL,
-            order_item_id INTEGER NOT NULL,
-            product_id VARCHAR(255) NOT NULL,
-            seller_id VARCHAR(255) NOT NULL,
-            shipping_limit_date DATE NOT NULL,
-            price DECIMAL NOT NULL,
-            freight_value DECIMAL NOT NULL,
-            PRIMARY KEY(order_item_id),
-            FOREIGN KEY(order_id) REFERENCES orders(order_id),
-            FOREIGN KEY(product_id) REFERENCES products(product_id),
-            FOREIGN KEY(seller_id) REFERENCES olist_sellers(seller_id)
+            customer_id VARCHAR(255) NOT NULL,
+            order_status VARCHAR(255) NOT NULL,
+            order_purchase_timestamp DATE NOT NULL,
+            order_approved_at DATE,
+            order_delivered_carrier_date DATE,
+            order_delivered_customer_date DATE,
+            order_estimated_delivery_date DATE NOT NULL,
+            total_order_cost DECIMAL,
+            PRIMARY KEY(order_id),
+            FOREIGN KEY(customer_id) REFERENCES customers(customer_id)
         )
     """)
     conn.commit()
     print("Tabla creada con éxito")
 else:
-    print("La tabla ya existe")    
+    print("La tabla ya existe")   
 
 # Verifica si la tabla existe
 cur.execute("""
@@ -176,24 +195,16 @@ else:
 
 # Verifica si la tabla existe
 cur.execute("""
-    SELECT to_regclass('orders')
+    SELECT to_regclass('product_category_name_translation')
 """)
 
 if cur.fetchone()[0] is None:
     # Creación de la tabla
     cur.execute("""
-        CREATE TABLE orders (
-            order_id VARCHAR(255) NOT NULL,
-            customer_id VARCHAR(255) NOT NULL,
-            order_status VARCHAR(255) NOT NULL,
-            order_purchase_timestamp DATE NOT NULL,
-            order_approved_at DATE,
-            order_delivered_carrier_date DATE,
-            order_delivered_customer_date DATE,
-            order_estimated_delivery_date DATE NOT NULL,
-            total_order_cost DECIMAL,
-            PRIMARY KEY(order_id),
-            FOREIGN KEY(customer_id) REFERENCES customers(customer_id)
+        CREATE TABLE product_category_name_translation (
+            product_category_name VARCHAR(255) NOT NULL,
+            product_category_name_english VARCHAR(255) NOT NULL,
+            PRIMARY KEY(product_category_name_english)
         )
     """)
     conn.commit()
@@ -201,25 +212,6 @@ if cur.fetchone()[0] is None:
 else:
     print("La tabla ya existe")    
 
-# Verifica si la tabla existe
-cur.execute("""
-    SELECT to_regclass('olist_sellers')
-""")
-
-if cur.fetchone()[0] is None:
-    # Creación de la tabla
-    cur.execute("""
-        CREATE TABLE olist_sellers (
-            seller_id VARCHAR(255) NOT NULL,
-            seller_zip_code_prefix INTEGER NOT NULL,
-            PRIMARY KEY(seller_id),
-            FOREIGN KEY(seller_zip_code_prefix) REFERENCES geolocation(geolocation_zip_code_prefix)
-        )
-    """)
-    conn.commit()
-    print("Tabla creada con éxito")
-else:
-    print("La tabla ya existe")    
 
 # Verifica si la tabla existe
 cur.execute("""
@@ -244,16 +236,24 @@ else:
 
 # Verifica si la tabla existe
 cur.execute("""
-    SELECT to_regclass('product_category_name_translation')
+    SELECT to_regclass('order_items')
 """)
 
 if cur.fetchone()[0] is None:
     # Creación de la tabla
     cur.execute("""
-        CREATE TABLE product_category_name_translation (
-            product_category_name VARCHAR(255) NOT NULL,
-            product_category_name_english VARCHAR(255) NOT NULL,
-            PRIMARY KEY(product_category_name_english)
+        CREATE TABLE order_items (
+            order_id VARCHAR(255) NOT NULL,
+            order_item_id INTEGER NOT NULL,
+            product_id VARCHAR(255) NOT NULL,
+            seller_id VARCHAR(255) NOT NULL,
+            shipping_limit_date DATE NOT NULL,
+            price DECIMAL NOT NULL,
+            freight_value DECIMAL NOT NULL,
+            PRIMARY KEY(order_item_id),
+            FOREIGN KEY(order_id) REFERENCES orders(order_id),
+            FOREIGN KEY(product_id) REFERENCES products(product_id),
+            FOREIGN KEY(seller_id) REFERENCES olist_sellers(seller_id)
         )
     """)
     conn.commit()
