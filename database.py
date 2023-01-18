@@ -191,6 +191,7 @@ if cur.fetchone()[0] is None:
             order_delivered_carrier_date DATE,
             order_delivered_customer_date DATE,
             order_estimated_delivery_date DATE NOT NULL,
+            total_order_cost DECIMAL,
             PRIMARY KEY(order_id),
             FOREIGN KEY(customer_id) REFERENCES customers(customer_id)
         )
