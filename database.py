@@ -24,8 +24,6 @@ if cur.fetchone()[0] is None:
             closed_id SERIAL,
             mql_id VARCHAR(255) NOT NULL,
             seller_id VARCHAR(255) NOT NULL,
-            sdr_id VARCHAR(255) NOT NULL,
-            sr_id VARCHAR(255) NOT NULL,
             won_date DATE NOT NULL,
             business_segment VARCHAR(255),
             lead_type VARCHAR(255),
@@ -48,8 +46,6 @@ if cur.fetchone()[0] is None:
             customer_id	 VARCHAR(255) NOT NULL,
             customer_unique_id VARCHAR(255) NOT NULL,
             customer_zip_code_prefix INTEGER NOT NULL,
-            customer_city VARCHAR(255) NOT NULL,
-            customer_state VARCHAR(255) NOT NULL,
             PRIMARY KEY(customer_id)
         )
     """)
@@ -91,7 +87,6 @@ if cur.fetchone()[0] is None:
         CREATE TABLE marketing_qualified_leads (
             mql_id VARCHAR(255) NOT NULL,
             first_contact_date DATE NOT NULL,
-            landing_page_id	VARCHAR(255) NOT NULL,
             origin VARCHAR(255),
             PRIMARY KEY(mql_id)
         )
@@ -207,8 +202,6 @@ if cur.fetchone()[0] is None:
         CREATE TABLE olist_sellers (
             seller_id VARCHAR(255) NOT NULL,
             seller_zip_code_prefix INTEGER NOT NULL,
-            seller_city VARCHAR(255) NOT NULL,
-            seller_state VARCHAR(255) NOT NULL,
             PRIMARY KEY(seller_id)
         )
     """)
@@ -229,10 +222,6 @@ if cur.fetchone()[0] is None:
             product_id VARCHAR(255) NOT NULL,
             product_category_name VARCHAR(255),
             product_photos_qty FLOAT,
-            product_weight_g FLOAT,
-            product_length_cm FLOAT,
-            product_height_cm FLOAT,
-            product_width_cm FLOAT,
             PRIMARY KEY(product_id)
         )
     """)
