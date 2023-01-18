@@ -27,7 +27,9 @@ if cur.fetchone()[0] is None:
             won_date DATE NOT NULL,
             business_segment VARCHAR(255),
             lead_type VARCHAR(255),
-            PRIMARY KEY(closed_id)
+            PRIMARY KEY(closed_id),
+            FOREIGN KEY (mql_id) REFERENCES marketing_qualified_leads(mql_id),
+            FOREIGN KEY (seller_id) REFERENCES olist_sellers(seller_id)
         )
     """)
     conn.commit()
@@ -46,7 +48,8 @@ if cur.fetchone()[0] is None:
             customer_id	 VARCHAR(255) NOT NULL,
             customer_unique_id VARCHAR(255) NOT NULL,
             customer_zip_code_prefix INTEGER NOT NULL,
-            PRIMARY KEY(customer_id)
+            PRIMARY KEY(customer_id),
+            FOREIGN KEY (customer_zip_code_prefix) REFERENCES geolocation(geolocation_zip_code_prefix)
         )
     """)
     conn.commit()
@@ -112,7 +115,10 @@ if cur.fetchone()[0] is None:
             shipping_limit_date DATE NOT NULL,
             price DECIMAL NOT NULL,
             freight_value DECIMAL NOT NULL,
-            PRIMARY KEY(order_item_id)
+            PRIMARY KEY(order_item_id),
+            FOREIGN KEY(order_id) REFERENCES orders(order_id),
+            FOREIGN KEY(product_id) REFERENCES products(product_id),
+            FOREIGN KEY(seller_id) REFERENCES olist_sellers(seller_id)
         )
     """)
     conn.commit()
@@ -134,7 +140,8 @@ if cur.fetchone()[0] is None:
             payment_type VARCHAR(255) NOT NULL,
             payment_installments INTEGER NOT NULL,
             payment_value DECIMAL NOT NULL,
-            PRIMARY KEY(payment_id)
+            PRIMARY KEY(payment_id),
+            FOREIGN KEY(order_id) REFERENCES orders(order_id)
         )
     """)
     conn.commit()
@@ -158,7 +165,8 @@ if cur.fetchone()[0] is None:
             review_comment_message VARCHAR(255),
             review_creation_date DATE NOT NULL,
             review_answer_timestamp DATE NOT NULL,
-            PRIMARY KEY(review_id)
+            PRIMARY KEY(review_id),
+            FOREIGN KEY(order_id) REFERENCES orders(order_id)
         )
     """)
     conn.commit()
@@ -183,7 +191,8 @@ if cur.fetchone()[0] is None:
             order_delivered_carrier_date DATE,
             order_delivered_customer_date DATE,
             order_estimated_delivery_date DATE NOT NULL,
-            PRIMARY KEY(order_id)
+            PRIMARY KEY(order_id),
+            FOREIGN KEY(customer_id) REFERENCES customers(customer_id)
         )
     """)
     conn.commit()
@@ -202,7 +211,8 @@ if cur.fetchone()[0] is None:
         CREATE TABLE olist_sellers (
             seller_id VARCHAR(255) NOT NULL,
             seller_zip_code_prefix INTEGER NOT NULL,
-            PRIMARY KEY(seller_id)
+            PRIMARY KEY(seller_id),
+            FOREIGN KEY(seller_zip_code_prefix) REFERENCES geolocation(geolocation_zip_code_prefix)
         )
     """)
     conn.commit()
@@ -222,7 +232,8 @@ if cur.fetchone()[0] is None:
             product_id VARCHAR(255) NOT NULL,
             product_category_name VARCHAR(255),
             product_photos_qty FLOAT,
-            PRIMARY KEY(product_id)
+            PRIMARY KEY(product_id),
+            FOREIGN KEY(product_category_name) REFERENCES product_category_name_translation(product_category_name)
         )
     """)
     conn.commit()
