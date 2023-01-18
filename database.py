@@ -13,6 +13,28 @@ cur = conn.cursor()
 
 # Verifica si la tabla existe
 cur.execute("""
+    SELECT to_regclass('product_category_name_translation')
+""")
+
+if cur.fetchone()[0] is None:
+    # Creación de la tabla
+    cur.execute("""
+        CREATE TABLE product_category_name_translation (
+            product_category_name_id SERIAL,
+            product_category_name VARCHAR(255) NOT NULL,
+            product_category_name_english VARCHAR(255) NOT NULL,
+            PRIMARY KEY(product_category_name_id)
+        )
+    """)
+    conn.commit()
+    print("Tabla creada con éxito")
+else:
+    print("La tabla ya existe")    
+cur.execute("""
+ ALTER TABLE product_category_name_translation ADD UNIQUE (product_category_name)
+ """)
+# Verifica si la tabla existe
+cur.execute("""
     SELECT to_regclass('geolocation')
 """)
 
@@ -192,26 +214,6 @@ if cur.fetchone()[0] is None:
     print("Tabla creada con éxito")
 else:
     print("La tabla ya existe")    
-
-# Verifica si la tabla existe
-cur.execute("""
-    SELECT to_regclass('product_category_name_translation')
-""")
-
-if cur.fetchone()[0] is None:
-    # Creación de la tabla
-    cur.execute("""
-        CREATE TABLE product_category_name_translation (
-            product_category_name VARCHAR(255) NOT NULL,
-            product_category_name_english VARCHAR(255) NOT NULL,
-            PRIMARY KEY(product_category_name_english)
-        )
-    """)
-    conn.commit()
-    print("Tabla creada con éxito")
-else:
-    print("La tabla ya existe")    
-
 
 # Verifica si la tabla existe
 cur.execute("""
