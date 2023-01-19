@@ -5,6 +5,9 @@ from sqlalchemy import create_engine
 
 #df11=pd.read_csv("Datasets/product_category_name_translation.csv")
 
+#df11=df11.append({"product_category_name" : "pc_gamer" , "product_category_name_english" : "pc_gamer"} , ignore_index=True)
+#df11=df11.append({"product_category_name" : "portateis_cozinha_e_preparadores_de_alimentos" , "product_category_name_english" : "kitchen and food preparation racks"} , ignore_index=True)
+
 #engine = create_engine('postgresql://olist:IHCRtcefMFbJIjUMXuUMtcIfpTAEo5d1@dpg-cf3enqun6mplnpe950v0-a.oregon-postgres.render.com:5432/olist')
 
 #df11.to_sql('product_category_name_translation', engine, if_exists='append', index=False)
