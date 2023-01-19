@@ -47,7 +47,7 @@ if cur.fetchone()[0] is None:
         CREATE TABLE customers (
             customer_id	 VARCHAR(255) NOT NULL,
             customer_unique_id VARCHAR(255) NOT NULL,
-            customer_zip_code_prefix INTEGER NOT NULL,
+            customer_zip_code_prefix VARCHAR(15) NOT NULL,
             PRIMARY KEY(customer_id),
             FOREIGN KEY (customer_zip_code_prefix) REFERENCES geolocation(geolocation_zip_code_prefix)
         )
@@ -66,7 +66,7 @@ if cur.fetchone()[0] is None:
     # Creación de la tabla
     cur.execute("""
         CREATE TABLE geolocation (
-            geolocation_zip_code_prefix INTEGER NOT NULL,
+            geolocation_zip_code_prefix VARCHAR(15) NOT NULL,
             geolocation_lat DECIMAL NOT NULL,
             geolocation_lng DECIMAL NOT NULL,
             geolocation_city VARCHAR(255) NOT NULL,
@@ -211,7 +211,7 @@ if cur.fetchone()[0] is None:
     cur.execute("""
         CREATE TABLE olist_sellers (
             seller_id VARCHAR(255) NOT NULL,
-            seller_zip_code_prefix INTEGER NOT NULL,
+            seller_zip_code_prefix VARCHAR(15) NOT NULL,
             PRIMARY KEY(seller_id),
             FOREIGN KEY(seller_zip_code_prefix) REFERENCES geolocation(geolocation_zip_code_prefix)
         )
@@ -232,7 +232,7 @@ if cur.fetchone()[0] is None:
         CREATE TABLE products (
             product_id VARCHAR(255) NOT NULL,
             product_category_name VARCHAR(255),
-            product_photos_qty FLOAT,
+            product_photos_qty INT,
             PRIMARY KEY(product_id),
             FOREIGN KEY(product_category_name) REFERENCES product_category_name_translation(product_category_name)
         )
