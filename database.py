@@ -91,7 +91,7 @@ if cur.fetchone()[0] is None:
     cur.execute("""
         CREATE TABLE olist_sellers (
             seller_id VARCHAR(255) NOT NULL,
-            seller_zip_code_prefix VARCHAR(15) NOT NULL,
+            seller_zip_code_prefix VARCHAR(15),
             PRIMARY KEY(seller_id),
             FOREIGN KEY(seller_zip_code_prefix) REFERENCES geolocation(zip_code_prefix)
         )
