@@ -42,12 +42,18 @@ if cur.fetchone()[0] is None:
     # Creación de la tabla
     cur.execute("""
         CREATE TABLE geolocation (
-            geolocation_zip_code_prefix VARCHAR(15) NOT NULL,
-            geolocation_lat DECIMAL NOT NULL,
-            geolocation_lng DECIMAL NOT NULL,
-            geolocation_city VARCHAR(255) NOT NULL,
-            geolocation_state VARCHAR(255) NOT NULL,
-            PRIMARY KEY(geolocation_zip_code_prefix)
+            zip_code_prefix VARCHAR(15) NOT NULL,
+            region_name VARCHAR(100) NOT NULL,
+            id_state INTEGER NOT NULL,
+            state_sigla VARCHAR(20) NOT NULL,
+            state_name VARCHAR(100) NOT NULL,
+            city VARCHAR(100) NOT NULL,
+            localizador VARCHAR(100),
+            latitud_city DECIMAL,
+            longitud_city DECIMAL,
+            latitud_state DECIMAL,
+            longitud_state DECIMAL,
+            PRIMARY KEY(zip_code_prefix)
         )
     """)
     conn.commit()
@@ -87,7 +93,7 @@ if cur.fetchone()[0] is None:
             seller_id VARCHAR(255) NOT NULL,
             seller_zip_code_prefix VARCHAR(15) NOT NULL,
             PRIMARY KEY(seller_id),
-            FOREIGN KEY(seller_zip_code_prefix) REFERENCES geolocation(geolocation_zip_code_prefix)
+            FOREIGN KEY(seller_zip_code_prefix) REFERENCES geolocation(zip_code_prefix)
         )
     """)
     conn.commit()
@@ -132,7 +138,7 @@ if cur.fetchone()[0] is None:
             customer_unique_id VARCHAR(255) NOT NULL,
             customer_zip_code_prefix VARCHAR(15) NOT NULL,
             PRIMARY KEY(customer_id),
-            FOREIGN KEY (customer_zip_code_prefix) REFERENCES geolocation(geolocation_zip_code_prefix)
+            FOREIGN KEY (customer_zip_code_prefix) REFERENCES geolocation(zip_code_prefix)
         )
     """)
     conn.commit()
