@@ -27,8 +27,8 @@ def find_longitud_geocoder(localizador):
 df_geo = pd.read_csv('./datasets/olist_geolocation_dataset.csv',dtype={'geolocation_zip_code_prefix': str})
 df_sell = pd.read_csv('./datasets/olist_sellers_dataset.csv',dtype={'seller_zip_code_prefix': str})
 df_cust = pd.read_csv('./datasets/olist_customers_dataset.csv',dtype={'customer_zip_code_prefix': str})
-df_coord_estados = pd.read_csv('./datasets_auxiliares/cordenadas_estados.csv',sep=';')
-df_coord_ciudades = pd.read_csv('./datasets_auxiliares/coordenadas.csv')
+df_coord_estados = pd.read_csv('./datasets_auxiliares/coordenadas_estados.csv',sep=';')
+df_coord_ciudades = pd.read_csv('./datasets_auxiliares/coordenadas_ciudades.csv')
 br_info = pd.read_csv('./datasets_auxiliares/br_info.csv')
 
 
@@ -61,5 +61,5 @@ df_procesado.rename(columns={'latitud': 'latitud_city','longitud': 'longitud_cit
 # Elimino geolocation_latitude y geolocation_longitude y uf
 df_final_procesado = df_procesado.drop(columns=['uf','geolocation_lat','geolocation_lng'])
 
-# EXPORTACION CSV
-df_final_procesado.to_csv('./datasets_auxiliares/pipeline_geo.csv', index=False)
+""" # EXPORTACION CSV
+df_final_procesado.to_csv('./datasets_auxiliares/pipeline_geo.csv', index=False) """
