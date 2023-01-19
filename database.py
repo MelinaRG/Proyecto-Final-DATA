@@ -204,6 +204,7 @@ if cur.fetchone()[0] is None:
     # Creación de la tabla
     cur.execute("""
         CREATE TABLE order_reviews (
+            review_unique_id SERIAL,
             review_id VARCHAR(255) NOT NULL,
             order_id VARCHAR(255) NOT NULL,
             review_score INTEGER NOT NULL,
