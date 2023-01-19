@@ -212,7 +212,7 @@ if cur.fetchone()[0] is None:
             review_comment_message VARCHAR(255),
             review_creation_date DATE NOT NULL,
             review_answer_timestamp DATE NOT NULL,
-            PRIMARY KEY(review_id),
+            PRIMARY KEY(review_unique_id),
             FOREIGN KEY(order_id) REFERENCES orders(order_id)
         )
     """)
