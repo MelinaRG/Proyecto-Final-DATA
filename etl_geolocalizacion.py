@@ -61,5 +61,6 @@ df_procesado.rename(columns={'latitud': 'latitud_city','longitud': 'longitud_cit
 # Elimino geolocation_latitude y geolocation_longitude y uf
 df_final_procesado = df_procesado.drop(columns=['uf','geolocation_lat','geolocation_lng'])
 
+print(df_final_procesado.shape)
 """ # EXPORTACION CSV
 df_final_procesado.to_csv('./datasets_auxiliares/pipeline_geo.csv', index=False) """
