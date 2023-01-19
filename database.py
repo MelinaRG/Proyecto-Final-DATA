@@ -251,6 +251,7 @@ if cur.fetchone()[0] is None:
     # Creación de la tabla
     cur.execute("""
         CREATE TABLE order_items (
+            order_unique_id SERIAL,
             order_id VARCHAR(255) NOT NULL,
             order_item_id INTEGER NOT NULL,
             product_id VARCHAR(255) NOT NULL,
@@ -258,7 +259,7 @@ if cur.fetchone()[0] is None:
             shipping_limit_date DATE NOT NULL,
             price DECIMAL NOT NULL,
             freight_value DECIMAL NOT NULL,
-            PRIMARY KEY(order_item_id),
+            PRIMARY KEY(order_unique_id),
             FOREIGN KEY(order_id) REFERENCES orders(order_id),
             FOREIGN KEY(product_id) REFERENCES products(product_id),
             FOREIGN KEY(seller_id) REFERENCES olist_sellers(seller_id)
