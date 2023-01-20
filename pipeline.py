@@ -5,7 +5,7 @@ from sqlalchemy import create_engine
 import time
 
 product_cat_name=pd.read_csv("Datasets/product_category_name_translation.csv")
-geolocation=pd.read_csv("Datasets/olist_geolocation_dataset.csv", dtype= {'zip_code_prefix': str})
+geolocation=pd.read_csv("Datasets/olist_geolocation_dataset.csv", dtype= {'geolocation_zip_code_prefix': str})
 marketing=pd.read_csv("Datasets/olist_marketing_qualified_leads_dataset.csv")
 closed_deals=pd.read_csv("Datasets/olist_closed_deals_dataset.csv")
 sellers=pd.read_csv("Datasets/olist_sellers_dataset.csv",dtype={"seller_zip_code_prefix": str})
@@ -15,16 +15,15 @@ payments=pd.read_csv("Datasets/olist_order_payments_dataset.csv")
 reviews=pd.read_csv("Datasets/olist_order_reviews_dataset.csv")
 products=pd.read_csv("Datasets/olist_products_dataset.csv")
 items=pd.read_csv("Datasets/olist_order_items_dataset.csv")
-geo=pd.read_csv('./datasets_auxiliares/pipeline_geo.csv', dtype={"customer_zip_code_prefix": str})
 
 
-# Obtiene el tiempo actual
-#start_time = time.time()
+#Obtiene el tiempo actual
+start_time = time.time()
 
 
-# Product Category Name Translation
+#Product Category Name Translation
 
-'''def etl_product_cat(product_cat_name):
+def etl_product_cat(product_cat_name):
     product_cat_name=product_cat_name.append({"product_category_name" : "pc_gamer" , "product_category_name_english" : "pc_gamer"} , ignore_index=True)
     product_cat_name=product_cat_name.append({"product_category_name" : "portateis_cozinha_e_preparadores_de_alimentos" , "product_category_name_english" : "kitchen_and_food_preparation_racks"} , ignore_index=True)
 
@@ -37,21 +36,10 @@ geo=pd.read_csv('./datasets_auxiliares/pipeline_geo.csv', dtype={"customer_zip_c
 
     print('product_cat_name load')
 
-    engine.dispose()'''
+    engine.dispose()
 
 
 # Geolocation
-'''geo=pd.read_csv('./datasets_auxiliares/pipeline_geo.csv', dtype={"customer_zip_code_prefix": str})
-
-engine = create_engine('postgresql://olist:IHCRtcefMFbJIjUMXuUMtcIfpTAEo5d1@dpg-cf3enqun6mplnpe950v0-a.oregon-postgres.render.com:5432/olist')
-
-geo.to_sql('geolocation', engine, if_exists='append', index=False)
-
-print('product_cat_name load')
-
-engine.dispose()'''
-
-
 def etl_geolocation(geolocation, sellers, customers):
 
     df_coord_estados = pd.read_csv('./datasets_auxiliares/coordenadas_estados.csv',sep=';')
@@ -87,8 +75,6 @@ def etl_geolocation(geolocation, sellers, customers):
     df_procesado.rename(columns={'latitud': 'latitud_city','longitud': 'longitud_city','latitude': 'latitud_state', 'longitude':'longitud_state'}, inplace=True)
     # Elimino geolocation_latitude y geolocation_longitude y uf
     df_final_procesado = df_procesado.drop(columns=['uf','geolocation_lat','geolocation_lng'])
-    print(df_final_procesado.head())
-    print(df_final_procesado.shape)
 
     engine = create_engine('postgresql://olist:IHCRtcefMFbJIjUMXuUMtcIfpTAEo5d1@dpg-cf3enqun6mplnpe950v0-a.oregon-postgres.render.com:5432/olist')
 
@@ -99,9 +85,9 @@ def etl_geolocation(geolocation, sellers, customers):
     engine.dispose()
 
 
-'''# Marketing
+# Marketing
 
-def etl_product_cat(marketing):
+def etl_marketing(marketing):
     marketing.drop(columns=["landing_page_id"],axis=1,inplace=True)
 
     marketing["first_contact_date"]=pd.to_datetime(marketing["first_contact_date"],format="%Y-%m-%d %H:%M:%S")
@@ -119,7 +105,9 @@ def etl_product_cat(marketing):
 
 # Sellers
 
-def etl_sellers(sellers):
+def etl_sellers():
+    sellers=pd.read_csv("Datasets/olist_sellers_dataset.csv",dtype={"seller_zip_code_prefix": str})
+
     sellers.drop(columns=["seller_city","seller_state"],axis=1,inplace=True)
 
     mergeauxiliar=pd.merge(left=sellers,right=closed_deals,how="outer",on="seller_id")
@@ -156,7 +144,9 @@ def etl_closed_deals(closed_deals):
 
 # Customers
 
-def etl_customers(customers):
+def etl_customers():
+    customers=pd.read_csv("Datasets/olist_customers_dataset.csv",dtype={"customer_zip_code_prefix": str})
+
     customers.drop(columns=["customer_city","customer_state"],axis=1,inplace=True)
 
     engine = create_engine('postgresql://olist:IHCRtcefMFbJIjUMXuUMtcIfpTAEo5d1@dpg-cf3enqun6mplnpe950v0-a.oregon-postgres.render.com:5432/olist')
@@ -277,14 +267,23 @@ def etl_items(items):
 
     print('items load')
 
-    engine.dispose()'''
+    engine.dispose()
 
 
 if __name__ == '__main__':
-    #etl_product_cat(product_cat_name)
+    etl_product_cat(product_cat_name)
     etl_geolocation(geolocation, sellers, customers)
+    etl_marketing(marketing)
+    etl_sellers()
+    etl_closed_deals(closed_deals)
+    etl_customers()
+    etl_orders(orders)
+    etl_payments(payments)
+    etl_reviews(reviews)
+    etl_products(products)
+    etl_items(items)
 
-'''# Obtiene el tiempo final
+# Obtiene el tiempo final
 end_time = time.time()
 
 # Calcula el tiempo de ejecución total
@@ -294,4 +293,4 @@ total_time = end_time - start_time
 minutes, seconds = divmod(total_time, 60)
 
 # Imprime el tiempo de ejecución total en minutos y segundos
-print("Tiempo de ejecución total: {:.0f} minutos y {:.2f} segundos".format(minutes, seconds))'''
+print("Tiempo de ejecución total: {:.0f} minutos y {:.2f} segundos".format(minutes, seconds))
