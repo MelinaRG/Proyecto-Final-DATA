@@ -200,15 +200,10 @@ def etl_orders(orders):
     orders.drop(columns=["difference_days1","difference_days2","difference_days3","difference_days4","difference_days5","order_approved_at_new","order_delivered_carrier_date_new"],inplace=True)
 
     dftotalordercost=payments.groupby(['order_id']).sum()
-    print(dftotalordercost)
     dftotalordercost=dftotalordercost.drop(columns=["payment_installments"])
-    print(dftotalordercost)
     dftotalordercost.rename(columns={"payment_value":"total_order_cost"},inplace=True)
-    print(dftotalordercost)
    
-    orders = orders.merge(dftotalordercost[['total_order_cost']], on='order_id')
-    #orders=pd.merge(left=orders,right=dftotalordercost,on="order_id",how="outer")
-    
+    orders = orders.merge(dftotalordercost[['total_order_cost']], on='order_id', how='left')    
 
     engine = create_engine('postgresql://olist:IHCRtcefMFbJIjUMXuUMtcIfpTAEo5d1@dpg-cf3enqun6mplnpe950v0-a.oregon-postgres.render.com:5432/olist')
 
