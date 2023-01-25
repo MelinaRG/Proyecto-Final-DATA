@@ -1,0 +1,11 @@
+[2023-01-25T06:56:57.671-0300] {processor.py:153} INFO - Started process (PID=34995) to work on /home/labeti/.local/lib/python3.10/site-packages/airflow/example_dags/tutorial.py
+[2023-01-25T06:56:57.672-0300] {processor.py:743} INFO - Processing file /home/labeti/.local/lib/python3.10/site-packages/airflow/example_dags/tutorial.py for tasks to queue
+[2023-01-25T06:56:57.673-0300] {logging_mixin.py:137} INFO - [2023-01-25T06:56:57.673-0300] {dagbag.py:538} INFO - Filling up the DagBag from /home/labeti/.local/lib/python3.10/site-packages/airflow/example_dags/tutorial.py
+[2023-01-25T06:56:57.801-0300] {processor.py:753} INFO - DAG(s) dict_keys(['tutorial']) retrieved from /home/labeti/.local/lib/python3.10/site-packages/airflow/example_dags/tutorial.py
+[2023-01-25T06:56:58.155-0300] {logging_mixin.py:137} INFO - [2023-01-25T06:56:58.154-0300] {manager.py:504} INFO - Created Permission View: can edit on DAG:tutorial
+[2023-01-25T06:56:58.277-0300] {logging_mixin.py:137} INFO - [2023-01-25T06:56:58.276-0300] {manager.py:504} INFO - Created Permission View: can delete on DAG:tutorial
+[2023-01-25T06:56:58.388-0300] {logging_mixin.py:137} INFO - [2023-01-25T06:56:58.387-0300] {manager.py:504} INFO - Created Permission View: can read on DAG:tutorial
+[2023-01-25T06:56:58.389-0300] {logging_mixin.py:137} INFO - [2023-01-25T06:56:58.388-0300] {dag.py:2690} INFO - Sync 1 DAGs
+[2023-01-25T06:56:58.422-0300] {logging_mixin.py:137} INFO - [2023-01-25T06:56:58.422-0300] {dag.py:2711} INFO - Creating ORM DAG for tutorial
+[2023-01-25T06:56:58.445-0300] {logging_mixin.py:137} INFO - [2023-01-25T06:56:58.445-0300] {dag.py:3437} INFO - Setting next_dagrun for tutorial to 2023-01-24T09:56:58.444972+00:00, run_after=2023-01-25T09:56:58.444972+00:00
+[2023-01-25T06:56:58.762-0300] {processor.py:175} INFO - Processing /home/labeti/.local/lib/python3.10/site-packages/airflow/example_dags/tutorial.py took 1.094 seconds
