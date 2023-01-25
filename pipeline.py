@@ -110,7 +110,7 @@ def etl_sellers():
 
     sellers.drop(columns=["seller_city","seller_state"],axis=1,inplace=True)
 
-    mergeauxiliar=pd.merge(left=sellers,right=closed_deals,how="outer",on="seller_id")
+    mergeauxiliar=pd.merge(left=sellers,right=closed_deals,how="left",on="seller_id")
     sellers=mergeauxiliar.iloc[:,0:2]
 
     sellers['seller_zip_code_prefix'] = sellers['seller_zip_code_prefix'].astype('string')
