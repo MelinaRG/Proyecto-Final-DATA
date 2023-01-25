@@ -117,8 +117,7 @@ if cur.fetchone()[0] is None:
             business_segment VARCHAR(255),
             lead_type VARCHAR(255),
             PRIMARY KEY(closed_id),
-            FOREIGN KEY (mql_id) REFERENCES marketing_qualified_leads(mql_id),
-            FOREIGN KEY (seller_id) REFERENCES olist_sellers(seller_id)
+            FOREIGN KEY (mql_id) REFERENCES marketing_qualified_leads(mql_id)
         )
     """)
     conn.commit()
