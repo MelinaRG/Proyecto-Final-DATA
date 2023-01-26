@@ -1,5 +1,0 @@
-[2023-01-25T06:56:49.709-0300] {processor.py:153} INFO - Started process (PID=34959) to work on /home/labeti/.local/lib/python3.10/site-packages/airflow/example_dags/subdags/subdag.py
-[2023-01-25T06:56:49.710-0300] {processor.py:743} INFO - Processing file /home/labeti/.local/lib/python3.10/site-packages/airflow/example_dags/subdags/subdag.py for tasks to queue
-[2023-01-25T06:56:49.711-0300] {logging_mixin.py:137} INFO - [2023-01-25T06:56:49.710-0300] {dagbag.py:538} INFO - Filling up the DagBag from /home/labeti/.local/lib/python3.10/site-packages/airflow/example_dags/subdags/subdag.py
-[2023-01-25T06:56:49.760-0300] {processor.py:755} WARNING - No viable dags retrieved from /home/labeti/.local/lib/python3.10/site-packages/airflow/example_dags/subdags/subdag.py
-[2023-01-25T06:56:49.768-0300] {processor.py:175} INFO - Processing /home/labeti/.local/lib/python3.10/site-packages/airflow/example_dags/subdags/subdag.py took 0.062 seconds
