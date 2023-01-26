@@ -3,7 +3,6 @@ from sqlalchemy import create_engine
 from datetime import timedelta
 from airflow import DAG
 from airflow.operators.python import PythonOperator
-from airflow.providers.postgres.operators.postgres import PostgresOperator
 from pendulum import today
 #Defino diccionario de argumentos por default
 default_args = {
@@ -16,13 +15,13 @@ default_args = {
     'retry_delay': timedelta(minutes=5),
 }
 
-product_cat_name=pd.read_csv("datasets/product_category_name_translation.csv")
+product_cat_name=pd.read_csv("/mnt/c/Users/jpost/OneDrive/Escritorio/Final-Data/Proyecto-Final-DATA-1/airflow/dags/datasets/product_category_name_translation.csv")
 #Product Category Name Translation
 
 def etl_product_cat(product_cat_name):
 
     #extract
-    product_cat_name=pd.read_csv("datasets/product_category_name_translation.csv")
+    product_cat_name=pd.read_csv("/mnt/c/Users/jpost/OneDrive/Escritorio/Final-Data/Proyecto-Final-DATA-1/airflow/dags/datasets/product_category_name_translation.csv")
 
     #transform
     product_cat_name=product_cat_name.append({"product_category_name" : "pc_gamer" , "product_category_name_english" : "pc_gamer"} , ignore_index=True)

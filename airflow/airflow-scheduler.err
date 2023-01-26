@@ -1,0 +1,9 @@
+[2023-01-26 15:39:11 -0300] [123] [INFO] Starting gunicorn 20.1.0
+[2023-01-26 15:39:11 -0300] [123] [INFO] Listening at: http://[::]:8793 (123)
+[2023-01-26 15:39:11 -0300] [123] [INFO] Using worker: sync
+[2023-01-26 15:39:11 -0300] [124] [INFO] Booting worker with pid: 124
+[2023-01-26 15:39:11 -0300] [126] [INFO] Booting worker with pid: 126
+[2023-01-26 15:45:00 -0300] [123] [INFO] Handling signal: term
+[2023-01-26 15:45:00 -0300] [126] [INFO] Worker exiting (pid: 126)
+[2023-01-26 15:45:00 -0300] [124] [INFO] Worker exiting (pid: 124)
+[2023-01-26 15:45:00 -0300] [123] [INFO] Shutting down: Master

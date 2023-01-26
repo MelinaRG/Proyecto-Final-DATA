@@ -1,0 +1,16 @@
+[[34m2023-01-26 15:39:11,727[0m] {[34mscheduler_job.py:[0m714} INFO[0m - Starting the scheduler[0m
+[[34m2023-01-26 15:39:11,728[0m] {[34mscheduler_job.py:[0m719} INFO[0m - Processing each file at most -1 times[0m
+[[34m2023-01-26 15:39:11,730[0m] {[34mexecutor_loader.py:[0m107} INFO[0m - Loaded executor: SequentialExecutor[0m
+[[34m2023-01-26 15:39:11,733[0m] {[34mmanager.py:[0m163} INFO[0m - Launched DagFileProcessorManager with pid: 125[0m
+[[34m2023-01-26 15:39:11,736[0m] {[34mscheduler_job.py:[0m1399} INFO[0m - Resetting orphaned tasks for active dag runs[0m
+[[34m2023-01-26 15:39:11,739[0m] {[34msettings.py:[0m58} INFO[0m - Configured default timezone Timezone('UTC')[0m
+[2023-01-26T15:39:11.757-0300] {manager.py:409} WARNING - Because we cannot use more than 1 thread (parsing_processes = 2) when using sqlite. So we set parallelism to 1.
+[[34m2023-01-26 15:44:11,960[0m] {[34mscheduler_job.py:[0m1399} INFO[0m - Resetting orphaned tasks for active dag runs[0m
+[[34m2023-01-26 15:45:00,228[0m] {[34mscheduler_job.py:[0m179} INFO[0m - Exiting gracefully upon receiving signal 15[0m
+[[34m2023-01-26 15:45:00,335[0m] {[34mprocess_utils.py:[0m129} INFO[0m - Sending Signals.SIGTERM to group 125. PIDs of all processes in the group: [][0m
+[[34m2023-01-26 15:45:00,336[0m] {[34mprocess_utils.py:[0m84} INFO[0m - Sending the signal Signals.SIGTERM to group 125[0m
+[[34m2023-01-26 15:45:00,336[0m] {[34mprocess_utils.py:[0m98} INFO[0m - Sending the signal Signals.SIGTERM to process 125 as process group is missing.[0m
+[[34m2023-01-26 15:45:00,337[0m] {[34mprocess_utils.py:[0m129} INFO[0m - Sending Signals.SIGTERM to group 125. PIDs of all processes in the group: [][0m
+[[34m2023-01-26 15:45:00,338[0m] {[34mprocess_utils.py:[0m84} INFO[0m - Sending the signal Signals.SIGTERM to group 125[0m
+[[34m2023-01-26 15:45:00,338[0m] {[34mprocess_utils.py:[0m98} INFO[0m - Sending the signal Signals.SIGTERM to process 125 as process group is missing.[0m
+[[34m2023-01-26 15:45:00,339[0m] {[34mscheduler_job.py:[0m788} INFO[0m - Exited execute loop[0m
