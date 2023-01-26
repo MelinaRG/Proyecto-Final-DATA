@@ -110,7 +110,7 @@ def etl_sellers():
 
     sellers.drop(columns=["seller_city","seller_state"],axis=1,inplace=True)
 
-    mergeauxiliar=pd.merge(left=sellers,right=closed_deals,how="outer",on="seller_id")
+    mergeauxiliar=pd.merge(left=sellers,right=closed_deals,how="left",on="seller_id")
     sellers=mergeauxiliar.iloc[:,0:2]
 
     sellers['seller_zip_code_prefix'] = sellers['seller_zip_code_prefix'].astype('string')
@@ -161,6 +161,8 @@ def etl_customers():
 # Orders
 
 def etl_orders(orders):
+    payments=pd.read_csv("Datasets/olist_order_payments_dataset.csv")
+    
     orders["order_purchase_timestamp"]=pd.to_datetime(orders["order_purchase_timestamp"],format="%Y-%m-%d %H:%M:%S")
     orders["order_approved_at"]=pd.to_datetime(orders["order_approved_at"],format="%Y-%m-%d %H:%M:%S")
     orders["order_delivered_carrier_date"]=pd.to_datetime(orders["order_delivered_carrier_date"],format="%Y-%m-%d %H:%M:%S")
@@ -196,6 +198,12 @@ def etl_orders(orders):
     orders.loc[(orders["order_status"]=="delivered")&(orders["order_delivered_customer_date"].isnull()),"order_status"]="shipped"
 
     orders.drop(columns=["difference_days1","difference_days2","difference_days3","difference_days4","difference_days5","order_approved_at_new","order_delivered_carrier_date_new"],inplace=True)
+
+    dftotalordercost=payments.groupby(['order_id']).sum()
+    dftotalordercost=dftotalordercost.drop(columns=["payment_installments"])
+    dftotalordercost.rename(columns={"payment_value":"total_order_cost"},inplace=True)
+   
+    orders = orders.merge(dftotalordercost[['total_order_cost']], on='order_id', how='left')    
 
     engine = create_engine('postgresql://olist:IHCRtcefMFbJIjUMXuUMtcIfpTAEo5d1@dpg-cf3enqun6mplnpe950v0-a.oregon-postgres.render.com:5432/olist')
 
