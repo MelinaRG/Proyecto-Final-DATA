@@ -2,10 +2,10 @@ import psycopg2
 
 # Conexión a la base de datos
 conn = psycopg2.connect(
-    host="dpg-cf3enqun6mplnpe950v0-a.oregon-postgres.render.com",
-    database="olist",
-    user="olist",
-    password="IHCRtcefMFbJIjUMXuUMtcIfpTAEo5d1"
+    host="basedata05.postgres.database.azure.com",
+    database="postgres",
+    user="olistadmin@basedata05",
+    password="Admindata05"
 )
 
 # Creación del cursor
