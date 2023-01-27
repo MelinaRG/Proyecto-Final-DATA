@@ -114,7 +114,6 @@ def etl_sellers():
     sellers=mergeauxiliar.iloc[:,0:2]
 
     sellers['seller_zip_code_prefix'] = sellers['seller_zip_code_prefix'].astype('string')
-    sellers.loc[sellers["seller_zip_code_prefix"].isnull(),"seller_zip_code_prefix"]="SIN DATO"
 
     engine = create_engine('postgresql://olist:IHCRtcefMFbJIjUMXuUMtcIfpTAEo5d1@dpg-cf3enqun6mplnpe950v0-a.oregon-postgres.render.com:5432/olist')
 
