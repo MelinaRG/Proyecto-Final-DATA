@@ -1,0 +1,15 @@
+{
+    "version": 3,
+    "mappings": "ACEA,0BAA0B;ADD1B,OAAO,CAAC,kHAAI;AAGZ;;iBAEiB;AACjB,AAAA,IAAI,CAAC;EACD,WAAW,EAAE,qBAAqB;EAClC,SAAS,EAAE,IAAI;EACf,gBAAgB,EAAE,KAAK,GAC1B;;AEXD;;iBAEiB;AACjB,AAAA,CAAC,CAAC;EACE,OAAO,EAAE,CAAC;EACV,MAAM,EAAE,CAAC;EACT,eAAe,EAAE,IAAI;EACrB,UAAU,EAAE,UAAU;EACtB,UAAU,EAAE,IAAI,GACnB;;ACTD;;iBAEiB;AFAjB,0BAA0B;AEG1B,AAAA,MAAM,CAAA;EACF,MAAM,EAAE,KAAK;EACb,gBAAgB,EAAE,0BAA0B;EAC5C,eAAe,EAAE,KAAK;EAEtB,iBAAiB,EAAE,SAAS;EAC5B,mBAAmB,EAAE,MAAM,GAe9B;EArBD,AAQQ,MARF,CAOF,GAAG,CACC,YAAY,CAAA;IACR,MAAM,EAAE,IAAI,GACf;EAVT,AAYI,MAZE,CAYF,WAAW,CAAA;IACP,QAAQ,EAAE,KAAK;IACf,OAAO,EAAE,IAAI;IACb,GAAG,EAAE,CAAC;IACN,IAAI,EAAE,CAAC;IACP,gBAAgB,EAAE,OAAO;IACzB,MAAM,EAAE,GAAG;IACX,KAAK,EAAE,IAAI,GACd;;AAGL;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;IA2GI;AEvIJ;;eAEe;AJAf,0BAA0B;AIE1B,AACI,IADA,CACA,MAAM,CAAA;EACF,WAAW,EAAE,IAAI;EACjB,cAAc,EAAE,IAAI,GAEvB",
+    "sources": [
+        "../sass/styles.scss",
+        "../sass/_ownvariables.scss",
+        "../sass/_reset.scss",
+        "../sass/_navbar.scss",
+        "../sass/_ownvariables.scss",
+        "../sass/_main.scss",
+        "../sass/_ownvariables.scss"
+    ],
+    "names": [],
+    "file": "styles.css"
+}

@@ -5,10 +5,87 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Producto Data - Olist</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@5.2.3/dist/cerulean/bootstrap.min.css" integrity="sha256-DVTNk9+Gfg5+ReJbDwm+4kBWmZZeHjaniFMj0km+q2Y=" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@5.2.3/dist/cerulean/bootstrap.min.css">
+    <link rel="shourtcut icon" href="./assets/isologo.png">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols" rel="stylesheet">
 </head>
 <body>
-    
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark nav_custom">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#">
+                <img id = "logo_navbar" src="./assets/isologo_brand.png" alt="Racont">
+              </a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarColor01">
+                <ul class="navbar-nav me-auto">
+                  <li class="nav-item">
+                    <a class="nav-link active" href="#">Home
+                      <span class="visually-hidden">(current)</span>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Features</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Pricing</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">About</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+                    <div class="dropdown-menu">
+                      <a class="dropdown-item" href="#">Action</a>
+                      <a class="dropdown-item" href="#">Another action</a>
+                      <a class="dropdown-item" href="#">Something else here</a>
+                      <div class="dropdown-divider"></div>
+                      <a class="dropdown-item" href="#">Separated link</a>
+                    </div>
+                  </li>
+                </ul>
+                <form class="d-flex">
+                  <input class="form-control me-sm-2" type="search" placeholder="Search">
+                  <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+                </form>
+              </div>
+            </div>
+          </nav>
+    </header>
+    <main>
+        <section id="about">
+
+            <h1>PRUEBA PUEBA PRUEBA</h1>
+            <P>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet tempore dolorem cupiditate aut, possimus voluptatem totam pariatur quidem reprehenderit inventore repellendus laboriosam recusandae numquam non. Earum est ducimus atque quae.
+            Vitae consequatur earum delectus officia. Enim iusto iste fugit amet odio eligendi, quos praesentium libero laboriosam error, ex consequuntur itaque quibusdam at officiis? Voluptas officia sequi iste magnam, veritatis dolore!
+            Debitis id aliquid accusantium qui. At quibusdam voluptatum architecto et commodi molestiae, dignissimos suscipit, quos distinctio esse minus neque. Velit ullam nulla laboriosam autem repellendus laborum numquam voluptate impedit quae?
+            Eveniet unde hic magni sequi molestias eum iure nemo quos quisquam placeat eligendi beatae vero molestiae autem fuga totam, blanditiis, enim cum quo, quam ullam! Asperiores similique hic delectus iusto!
+            Esse delectus totam, laborum nisi libero dignissimos eveniet accusamus, tenetur sequi quasi similique, sapiente corrupti magnam ipsam quos. Reiciendis ratione aspernatur est quam quisquam natus facere velit illo deserunt perspiciatis.
+            Voluptatem tenetur asperiores natus qui, nihil accusantium magni quae reprehenderit quam? Fuga dolor error sint debitis, iusto cupiditate quo voluptate illum aliquam eum veritatis aliquid ex impedit cumque ducimus vel.
+            Aliquam animi officiis iure incidunt. Labore a expedita reiciendis fuga dignissimos iste qui tempora quam dolorem neque, consequatur dicta vel ab cum hic totam ratione dolores praesentium? Esse, doloribus temporibus?
+            Odit modi labore minus eligendi ratione numquam iusto ducimus vel accusantium maiores qui, autem exercitationem aperiam dignissimos nobis? Adipisci labore quod omnis aperiam animi voluptatibus placeat veritatis beatae inventore debitis!
+            Repudiandae necessitatibus enim atque, harum quidem dolorem est soluta sequi sapiente dolore quisquam asperiores ducimus inventore, nesciunt rerum deleniti voluptates qui, officiis saepe ad cumque. Iste omnis hic ipsum voluptate.
+            Alias et ut autem reiciendis vitae, dolorum aliquam ea ipsum cum similique quaerat assumenda ab fugiat corrupti repellat quia. Inventore asperiores ipsa repellendus et ullam facilis modi ducimus suscipit magni!</P>
+        </section>
+
+
+    </main>
+    <footer></footer>
+
+
+    <!-- LLAMADA JAVA SCRIPT BOOTSTRAP -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <!-- SCRIPT PARA MENU FIJO -->
+    <script type="text/javascript">
+		window.addEventListener("scroll", function(){
+			var header = document.querySelector("header");
+			header.classList.toggle("menu-fijo",window.scrollY>0);
+		})
+	</script>
+
 </body>
 </html>
