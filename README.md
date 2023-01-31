@@ -25,7 +25,9 @@ Contratados por la empresa Brasileña *Olist*, vamos a situarnos en el rol de co
 
 - Al tratarse de un proyecto grupal nos organizamos para trabajar divididos en 3 áreas: Ingeniería de datos, Análisis de datos y Machine Learning. 
 
-- Partimos de un dataset que contenía 11 tablas, proporcionado por Olist, con datos que abarcan desde el año 2016 hasta el año 2018. El período de tiempo en el que se desarrollo el proyecto fue de casi 1 mes y dentro de la carpeta [Informes](https://github.com/MelinaRG/Proyecto-Final-DATA/tree/main/Informes) pueden encontrar los reportes detallados de las actividades realizadas en cada Sprint (duración de cada sprint: 1 semana).
+- Partimos de un dataset que contenía 11 tablas, proporcionado por Olist, con datos que abarcan desde el año 2016 hasta el año 2018.
+
+- El período de tiempo en el que se desarrollo el proyecto fue de casi 1 mes y dentro de la carpeta [Informes](https://github.com/MelinaRG/Proyecto-Final-DATA/tree/main/Informes) pueden encontrar los reportes detallados de las actividades realizadas en cada Sprint (duración de cada sprint: 1 semana).
  
 - Las tareas más relevantes fueron las siguientes:
 
