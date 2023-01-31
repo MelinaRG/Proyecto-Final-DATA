@@ -108,7 +108,7 @@ def main():
     # CARGA DEL DATAFRAME
     with st.spinner('Wait for it...'):
         df_d = get_df_transformed()
-        # conn.close()
+        conn.close()
     st.success('Datos cargados!')
 
     # SIDEBAR

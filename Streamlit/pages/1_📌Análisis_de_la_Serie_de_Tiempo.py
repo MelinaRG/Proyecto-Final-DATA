@@ -94,7 +94,7 @@ def main():
     with st.spinner('Wait for it...'):
         # DATABASE CONNECTION #
         df_d = get_df_transformed()
-        # conn.close()
+        conn.close()
     st.success('Datos cargados!')
 
     # SIDEBAR
