@@ -21,52 +21,37 @@ Contratados por la empresa Brasileña *Olist*, vamos a situarnos en el rol de co
 - Descubrir factores que influyen en el abandono de los procesos de compra y/o que producen insatisfacción de los clientes.
 - Analizar la interacción entre los clientes, Olist y las pequeñas y medianas empresas.
 
-## :small_orange_diamond: **Desarrollo del proyecto**
+## :small_blue_diamond: **Desarrollo del proyecto**
 
-Al tratarse de un proyecto grupal nos organizamos para trabajar divididos en 3 áreas de desarrollo: Frontend, Backend y Métricas. 
+- Al tratarse de un proyecto grupal nos organizamos para trabajar divididos en 3 áreas: Ingeniería de datos, Análisis de datos y Machine Learning. 
 
-En el presente repositorio se pueden observar las distintas ramas que fuimos utilizando:
+- Partimos de un dataset que contenía 11 tablas, proporcionado por Olist, con datos que abarcan desde el año 2016 hasta el año 2018. El período de tiempo en el que se desarrollo el proyecto fue de casi 1 mes y dentro de la carpeta [Informes](https://github.com/MelinaRG/Proyecto-Final-DATA/tree/main/Informes) pueden encontrar los reportes detallados de las actividades realizadas en cada Sprint (duración de cada sprint: 1 semana).
+ 
+- Las tareas más relevantes fueron las siguientes:
 
-`main`
-- Contiene una carpeta llamada *app* con el desarrollo del backend y frontend.(El frontend en un principio se trabajo en una rama separada y despues se hizo el merge a main). 
+***Ingeniería de datos***
 
-- También posee un contenedor de Docker en el archivo *Dockerfile* que utilizamos para realizar el deploy en Render.
-        
-`database`
-- Contiene los *procedimientos* necesarios para realizar las operaciones de carga y consulta a la Base de Datos.
+- Informe EDA (Exploratory Data Analysis), pueden encontrar el análisis de cada tabla en: [EDA](https://github.com/MelinaRG/Proyecto-Final-DATA/tree/main/EDA)
+- Creación del Data Warehouse junto con el Modelo Entidad-Relación: [DataWarehouse](https://github.com/MelinaRG/Proyecto-Final-DATA/tree/main/DataWarehouse)
+- Pipeline de [ETL](https://github.com/MelinaRG/Proyecto-Final-DATA/tree/main/ETL) (Extract, Transform and Load), donde el archivo carga_inicial.py genera la carga de los datos ya limpios en el Data Warehouse.
+- Escalabilidad on Cloud, pensando en un futuro manejo de grandes cantidades de datos. En la carpeta [Airflow]() podrán encontrar los scripts con el pipeline que permite la carga incremental, con un gestión del flujo orquestado a través de Apache Airflow.
 
-`GameDev`
-- Se utilizó para el desarrollo del juego *Code Rush*.
+***Análisis de datos***
 
-`streamlit`
-- Se utilizó para el desarrollo de una app que permite la vizualización de diferentes métricas, relacionadas con el formulario de registro de alumnos.
-             
-- Posee un contenedor de docker y el deploy hecho en Render.
+- Creación de un [Dashboard](https://github.com/MelinaRG/Proyecto-Final-DATA/tree/main/Dashboard) con distintos KPIs, que permiten medir el rendimiento actual y futuro de la empresa.
 
+***Machine Learning***
 
+- Elección y desarrollo de un modelo de [Machine Learning](https://github.com/MelinaRG/Proyecto-Final-DATA/tree/main/Machine%20Learning), en este caso elegimos un modelo de *Forecasting* para la predicción de ventas futuras
 
+***Desarrollo de un MVP***
 
-## :small_orange_diamond: **Funcionalidades de la Plataforma**
+- Presentación de un producto final al cliente 
+
+## :small_orange_diamond: **Funcionalidades de la Plataforma - MVP**
 
 
 1- `LOGIN`: El acceso a la plataforma es exclusivo para los TAs.
-
-2- `Formulario de Registro TAs`: Le permite al Administrador dar de alta a los TAs y luego brindarles las credenciales para que puedan ingresar a la plataforma.
-
-3- `INICIO`: Podrán encontrar las herramientas necesarias para el desarrollo de los SUPs.
-
-4- `JUEGOS`: Sección en la que se pueden elegir diversos juegos multijugador.
-
-5- `TEMAS`: Sección en la que se pueden elegir tarjetas con temas de conversación para romper el hielo al comienzo del SUP y links a dinámicas de grupo.
-
-6- `FORM`: Sección que cuenta con un formulario (los TAs deben brindarles el link del mismo a los alumnos del SUP), ya que al completarlo se dan de alta en la base de datos.
-
-7- `ASISTENCIA`: Con los alumnos dados de alta en la base de datos se puede comenzar a tomar asistencia desde esta sección.
-
-8- `MÉTRICAS`: Sección que cuenta con diferentes métricas que buscan ayudar al TA a conocer la composición e intereses de su grupo.
-
-
-
 
 
 ## :small_blue_diamond: **Equipo de Trabajo**
