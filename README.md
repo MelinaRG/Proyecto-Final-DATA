@@ -69,7 +69,7 @@ En el presente repositorio se pueden observar las distintas ramas que fuimos uti
 
 
 
-## :small_orange_diamond: **Equipo de Trabajo**
+## :small_blue_diamond: **Equipo de Trabajo**
 
 
  - Emmanuel Corral: ANALISTA FUNCIONAL
@@ -89,8 +89,51 @@ En el presente repositorio se pueden observar las distintas ramas que fuimos uti
    https://www.linkedin.com/in/melina-griffo-8398641b0/
    
   - Isaac Peña: INGENIERO DE DATOS
+   https://www.linkedin.com/in/isaac-junior-pe%C3%B1a-cueva-320562264/
  
-## :small_orange_diamond: **Herramientas y lenguajes utilizados**
+## :small_blue_diamond: **Stack tecnológico**
+
+***Herramientas de colaboración y gestión de proyectos***
+
+- Discord, Google meet, Asana
+
+***Ingenieria de datos***
+
+*EDA, ETL, DATAWAREHOUSE*
+- Python, Pandas, Matplotlib, Seaborn, SQLAlchemy, PostgreSQL
+
+***Análisis de datos***
+
+*Business Intelligence y Machine Learning*
+- PowerBI, Prophet, Python, Pandas, SQLAlchemy, Plotly
+
+***Escalabilidad***
+
+*On Cloud*
+- Azure, Data Factory, Databricks, Airflow
+
+***Producto Final***
+
+*MVP - Minimum Viable Product*
+- HTML, CSS, SCSS, Bootstrap, Javascript, Streamlit
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 - Frontend: HTML<a href="https://emoji.gg/emoji/HTML"><img src="https://cdn3.emoji.gg/emojis/HTML.png" width="20px" height="20px" alt="HTML"></a> CSS <a href="https://emoji.gg/emoji/css"><img src="https://cdn3.emoji.gg/emojis/css.png" width="20px" height="20px" alt="css"></a> JavaScript <a href="https://emoji.gg/emoji/8009-java-js"><img src="https://cdn3.emoji.gg/emojis/8009-java-js.png" width="20px" height="20px" alt="Java_Js"></a>
