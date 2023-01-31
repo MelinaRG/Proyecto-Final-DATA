@@ -98,6 +98,12 @@ header {
     left: 0;
     height: 8vh;
     width: 100%; }
+  header #principal-title {
+    font-size: 6rem;
+    font-weight: 1200; }
+    header #principal-title span {
+      font-size: 8rem;
+      font-weight: 1200; }
 
 /* nav{
     height: 100vh;
@@ -211,9 +217,10 @@ header {
 -----MAIN-----
 **************/
 /*Variables del proyecto*/
-main #about {
+main section {
   padding-top: 2rem;
-  padding-bottom: 2rem; }
+  padding-bottom: 2rem;
+  height: auto; }
 
 /***************
 -----FOOTER-----
@@ -221,7 +228,12 @@ main #about {
 /*Variables del proyecto*/
 footer {
   background-color: #151516;
-  height: 20vh; }
+  height: auto; }
   footer h1 {
     color: whitesmoke; }
+  footer #p-footer {
+    color: white;
+    font-weight: 200;
+    font-size: medium;
+    margin: auto; }
 /*# sourceMappingURL=styles.css.map */
