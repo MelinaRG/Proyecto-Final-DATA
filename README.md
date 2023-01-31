@@ -40,6 +40,7 @@ Contratados por la empresa Brasileña *Olist*, vamos a situarnos en el rol de co
 
 ***Análisis de datos***
 
+- Estudiar el contexto socio económico de Brasil y su relación con los datos.
 - Creación de un [Dashboard](https://github.com/MelinaRG/Proyecto-Final-DATA/tree/main/Dashboard) con distintos KPIs, que permiten medir el rendimiento actual y futuro de la empresa.
 
 ***Machine Learning***
@@ -77,7 +78,7 @@ Contratados por la empresa Brasileña *Olist*, vamos a situarnos en el rol de co
    
   - Isaac Peña: INGENIERO DE DATOS
   
-   https://www.linkedin.com/in/isaac-junior-pe%C3%B1a-cueva-320562264/
+    https://www.linkedin.com/in/isaac-junior-pe%C3%B1a-cueva-320562264/
  
 ## :small_blue_diamond: **Stack tecnológico**
 
