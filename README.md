@@ -89,6 +89,7 @@ En el presente repositorio se pueden observar las distintas ramas que fuimos uti
    https://www.linkedin.com/in/melina-griffo-8398641b0/
    
   - Isaac Peña: INGENIERO DE DATOS
+  
    https://www.linkedin.com/in/isaac-junior-pe%C3%B1a-cueva-320562264/
  
 ## :small_blue_diamond: **Stack tecnológico**
@@ -97,58 +98,24 @@ En el presente repositorio se pueden observar las distintas ramas que fuimos uti
 
 - Discord, Google meet, Asana
 
-***Ingenieria de datos***
+***Ingenieria de datos:*** *EDA, ETL, DATAWAREHOUSE*
 
-*EDA, ETL, DATAWAREHOUSE*
-- Python, Pandas, Matplotlib, Seaborn, SQLAlchemy, PostgreSQL
+- Python <a href="https://emoji.gg/emoji/9794-python"><img src="https://cdn3.emoji.gg/emojis/9794-python.png" width="20px" height="20px" alt="python"></a> Pandas <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" width="20px" height="20px" /> Matplotlib <img src="https://upload.wikimedia.org/wikipedia/commons/8/84/Matplotlib_icon.svg" width="20px" height="20px" /> Seaborn <img src="https://seaborn.pydata.org/_images/logo-mark-lightbg.svg" width="20px" height="20px" /> SQLAlchemy <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlalchemy/sqlalchemy-original.svg" width="30px" height="30px" /> PostgreSQL <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" width="20px" height="20px" />
+          
 
-***Análisis de datos***
+***Análisis de datos:*** *Business Intelligence y Machine Learning*
 
-*Business Intelligence y Machine Learning*
-- PowerBI, Prophet, Python, Pandas, SQLAlchemy, Plotly
+- PowerBI <img src="https://upload.wikimedia.org/wikipedia/commons/c/cf/New_Power_BI_Logo.svg" width="20px" height="20px" /> Prophet <img src="https://images.ctfassets.net/fi0zmnwlsnja/1JkCWMEa9c6VNGlwSbAbUD/eb900356e16d88013306b246832ca6aa/2018-03-06-how-facebook-made-business-forecasting-scalable-for-the-masses-OG-image.png" width="20px" height="20px" /> Python <a href="https://emoji.gg/emoji/9794-python"><img src="https://cdn3.emoji.gg/emojis/9794-python.png" width="20px" height="20px" alt="python"></a> Pandas <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" width="20px" height="20px" /> SQLAlchemy <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlalchemy/sqlalchemy-original.svg" width="30px" height="30px" /> Plotly <img src="https://images.plot.ly/logo/new-branding/plotly-logomark.png" width="20px" height="20px" />
 
-***Escalabilidad***
-
-*On Cloud*
-- Azure, Data Factory, Databricks, Airflow
-
-***Producto Final***
-
-*MVP - Minimum Viable Product*
-- HTML, CSS, SCSS, Bootstrap, Javascript, Streamlit
+***Escalabilidad*** *On Cloud*
+- Azure <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg" width="20px" height="20px" /> Data Factory <img src="https://symbols.getvecta.com/stencil_28/27_data-factory.8004c08598.svg" width="20px" height="20px"> Databricks <img src="https://assets-global.website-files.com/60d9fbbfcd9fcb40bad8aac3/60fae2c9b6f2dd2ebad2ca05_databricks-logo-icon.png" width="20px" height="20px" > Airflow <img src="https://miro.medium.com/max/700/0*ICxzNyns9DR90WNS" width="20px" height="20px" >
 
 
 
+***Producto Final*** *MVP - Minimum Viable Product*
 
+- HTML<a href="https://emoji.gg/emoji/HTML"><img src="https://cdn3.emoji.gg/emojis/HTML.png" width="20px" height="20px" alt="HTML"></a> CSS <a href="https://emoji.gg/emoji/css"><img src="https://cdn3.emoji.gg/emojis/css.png" width="20px" height="20px" alt="css"></a> JavaScript <a href="https://emoji.gg/emoji/8009-java-js"><img src="https://cdn3.emoji.gg/emojis/8009-java-js.png" width="20px" height="20px" alt="Java_Js"></a> Bootstrap Streamlit
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-- Frontend: HTML<a href="https://emoji.gg/emoji/HTML"><img src="https://cdn3.emoji.gg/emojis/HTML.png" width="20px" height="20px" alt="HTML"></a> CSS <a href="https://emoji.gg/emoji/css"><img src="https://cdn3.emoji.gg/emojis/css.png" width="20px" height="20px" alt="css"></a> JavaScript <a href="https://emoji.gg/emoji/8009-java-js"><img src="https://cdn3.emoji.gg/emojis/8009-java-js.png" width="20px" height="20px" alt="Java_Js"></a>
-
-- Backend: Python <a href="https://emoji.gg/emoji/9794-python"><img src="https://cdn3.emoji.gg/emojis/9794-python.png" width="20px" height="20px" alt="python"></a> y FastApi :zap:
-
-- Base de Datos: PostgreSQL <a href="https://emoji.gg/emoji/6648_dataemoji"><img src="https://cdn3.emoji.gg/emojis/6648_dataemoji.png" width="20px" height="20px" alt="dataemoji"></a>
-
-- Métricas: Streamlit :chart_with_upwards_trend:
-
-- Render :globe_with_meridians:
-
-- Docker :whale2:
-
-- Code Rush: Javascript  <a href="https://emoji.gg/emoji/8009-java-js"><img src="https://cdn3.emoji.gg/emojis/8009-java-js.png" width="20px" height="20px" alt="Java_Js"></a> y Firebase <img src="https://img.icons8.com/color/20/null/google-firebase-console.png"/>
 
 
 ## **Gracias por leer hasta el final! :grin:**
