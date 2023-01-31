@@ -72,27 +72,23 @@ En el presente repositorio se pueden observar las distintas ramas que fuimos uti
 ## :small_orange_diamond: **Equipo de Trabajo**
 
 
- - Emmanuel Fernandez: FRONTEND y desarrollo del juego *Code Rush*
+ - Emmanuel Corral: ANALISTA FUNCIONAL
  
-    https://www.linkedin.com/in/emmanuel-fernandez-43a60a196/
+    https://www.linkedin.com/in/emmanuel-corral-52034162/
  
- - Luciano Asencio: FRONTEND
- 
-   https://www.linkedin.com/in/luciano-asencio/
- 
- - Julio Postigo: MÉTRICAS Y ANALÍTICA
+ - Julio Postigo: ANALISTA DE DATOS
  
    https://www.linkedin.com/in/julio-cesar-postigo-1a5707219/
  
- - Federico Olivieri: COORDINACIÓN Y BACKEND
+ - Nicolas Lazarte: CIENTÍFICO DE DATOS
  
-   https://www.linkedin.com/in/olivieri-federico/
+   https://www.linkedin.com/in/nicolas-angel-lazarte/
  
- - Melina Griffo: BACKEND 
+ - Melina Griffo: PROJECT MANAGER E INGENIERA DE DATOS
  
    https://www.linkedin.com/in/melina-griffo-8398641b0/
- 
- 
+   
+  - Isaac Peña: INGENIERO DE DATOS
  
 ## :small_orange_diamond: **Herramientas y lenguajes utilizados**
 
@@ -110,11 +106,6 @@ En el presente repositorio se pueden observar las distintas ramas que fuimos uti
 - Docker :whale2:
 
 - Code Rush: Javascript  <a href="https://emoji.gg/emoji/8009-java-js"><img src="https://cdn3.emoji.gg/emojis/8009-java-js.png" width="20px" height="20px" alt="Java_Js"></a> y Firebase <img src="https://img.icons8.com/color/20/null/google-firebase-console.png"/>
-
-
-## :small_orange_diamond: **Video Demostrativo**
-
-https://youtu.be/tlPccbdVIXA
 
 
 ## **Gracias por leer hasta el final! :grin:**
