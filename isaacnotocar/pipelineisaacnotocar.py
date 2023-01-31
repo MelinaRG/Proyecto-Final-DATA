@@ -24,9 +24,12 @@ start_time = time.time()
 #Product Category Name Translation
 
 def etl_product_cat(product_cat_name):
-    product_cat_name=product_cat_name.append({"product_category_name" : "pc_gamer" , "product_category_name_english" : "pc_gamer"} , ignore_index=True)
-    product_cat_name=product_cat_name.append({"product_category_name" : "portateis_cozinha_e_preparadores_de_alimentos" , "product_category_name_english" : "kitchen_and_food_preparation_racks"} , ignore_index=True)
-
+    #product_cat_name=product_cat_name.append({"product_category_name" : "pc_gamer" , "product_category_name_english" : "pc_gamer"} , ignore_index=True)
+    #product_cat_name=product_cat_name.append({"product_category_name" : "portateis_cozinha_e_preparadores_de_alimentos" , "product_category_name_english" : "kitchen_and_food_preparation_racks"} , ignore_index=True)
+    #product_cat_name=product_cat_name.append({"product_category_name" : "outras" , "product_category_name_english" : "others"} , ignore_index=True)
+    product_cat_nameex=pd.DataFrame({"product_category_name" : ["pc_gamer","portateis_cozinha_e_preparadores_de_alimentos","outras"] \
+                , "product_category_name_english" : ["pc_gamer","kitchen_and_food_preparation_racks","other"]})
+    product_cat_name=pd.concat([product_cat_name,product_cat_nameex],ignore_index= True)
     product_cat_name["product_category_name"]=product_cat_name["product_category_name"].str.replace("_"," ")
     product_cat_name["product_category_name_english"]=product_cat_name["product_category_name_english"].str.replace("_"," ")
 

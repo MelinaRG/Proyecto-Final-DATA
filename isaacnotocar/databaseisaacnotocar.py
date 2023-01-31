@@ -22,7 +22,7 @@ if cur.fetchone()[0] is None:
         CREATE TABLE product_category_name_translation (
             product_category_name_id SERIAL,
             product_category_name VARCHAR(255) NOT NULL,
-            product_category_name_english VARCHAR(255) NOT NULL,
+            product_category_name_english VARCHAR(255),
             PRIMARY KEY(product_category_name_id)
         )
     """)
@@ -71,7 +71,7 @@ if cur.fetchone()[0] is None:
     cur.execute("""
         CREATE TABLE marketing_qualified_leads (
             mql_id VARCHAR(255) NOT NULL,
-            first_contact_date DATE NOT NULL,
+            first_contact_date DATE ,
             origin VARCHAR(255),
             PRIMARY KEY(mql_id)
         )
@@ -113,7 +113,7 @@ if cur.fetchone()[0] is None:
             closed_id SERIAL,
             mql_id VARCHAR(255) NOT NULL,
             seller_id VARCHAR(255) NOT NULL,
-            won_date DATE NOT NULL,
+            won_date DATE ,
             business_segment VARCHAR(255),
             lead_type VARCHAR(255),
             PRIMARY KEY(closed_id),
@@ -136,7 +136,7 @@ if cur.fetchone()[0] is None:
         CREATE TABLE customers (
             customer_id	 VARCHAR(255) NOT NULL,
             customer_unique_id VARCHAR(255) NOT NULL,
-            customer_zip_code_prefix VARCHAR(15) NOT NULL,
+            customer_zip_code_prefix VARCHAR(15) ,
             PRIMARY KEY(customer_id),
             FOREIGN KEY (customer_zip_code_prefix) REFERENCES geolocation(zip_code_prefix)
         )
@@ -157,12 +157,12 @@ if cur.fetchone()[0] is None:
         CREATE TABLE orders (
             order_id VARCHAR(255) NOT NULL,
             customer_id VARCHAR(255) NOT NULL,
-            order_status VARCHAR(255) NOT NULL,
-            order_purchase_timestamp DATE NOT NULL,
+            order_status VARCHAR(255) ,
+            order_purchase_timestamp DATE ,
             order_approved_at DATE,
             order_delivered_carrier_date DATE,
             order_delivered_customer_date DATE,
-            order_estimated_delivery_date DATE NOT NULL,
+            order_estimated_delivery_date DATE,
             total_order_cost DECIMAL,
             PRIMARY KEY(order_id),
             FOREIGN KEY(customer_id) REFERENCES customers(customer_id)
@@ -184,9 +184,9 @@ if cur.fetchone()[0] is None:
         CREATE TABLE order_payments (
             payment_id SERIAL,
             order_id VARCHAR(255) NOT NULL,
-            payment_type VARCHAR(255) NOT NULL,
-            payment_installments INTEGER NOT NULL,
-            payment_value DECIMAL NOT NULL,
+            payment_type VARCHAR(255) ,
+            payment_installments INTEGER ,
+            payment_value DECIMAL ,
             PRIMARY KEY(payment_id),
             FOREIGN KEY(order_id) REFERENCES orders(order_id)
         )
@@ -208,11 +208,11 @@ if cur.fetchone()[0] is None:
             review_unique_id SERIAL,
             review_id VARCHAR(255) NOT NULL,
             order_id VARCHAR(255) NOT NULL,
-            review_score INTEGER NOT NULL,
+            review_score INTEGER ,
             review_comment_title VARCHAR(255),
             review_comment_message VARCHAR(255),
-            review_creation_date DATE NOT NULL,
-            review_answer_timestamp DATE NOT NULL,
+            review_creation_date DATE ,
+            review_answer_timestamp DATE ,
             PRIMARY KEY(review_unique_id),
             FOREIGN KEY(order_id) REFERENCES orders(order_id)
         )
@@ -257,9 +257,9 @@ if cur.fetchone()[0] is None:
             order_item_id INTEGER NOT NULL,
             product_id VARCHAR(255) NOT NULL,
             seller_id VARCHAR(255) NOT NULL,
-            shipping_limit_date DATE NOT NULL,
-            price DECIMAL NOT NULL,
-            freight_value DECIMAL NOT NULL,
+            shipping_limit_date DATE ,
+            price DECIMAL ,
+            freight_value DECIMAL ,
             PRIMARY KEY(order_unique_id),
             FOREIGN KEY(order_id) REFERENCES orders(order_id),
             FOREIGN KEY(product_id) REFERENCES products(product_id),
