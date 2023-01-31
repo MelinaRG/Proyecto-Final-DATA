@@ -11,8 +11,8 @@ Contratados por la empresa Brasileña *Olist*, vamos a situarnos en el rol de co
 
 ##  :small_blue_diamond: **Objetivos**
 ***Objetivos Generales***
-- Entender el funcionamiento del mercado ecommerce y el negocio de Olist. Diagnosticar su contexto actual
-- Identificar patrones de comportamiento de los usuarios de Olist (Pymes y clientes)
+- Entender el funcionamiento del mercado ecommerce y el negocio de Olist. Diagnosticar su contexto actual.
+- Identificar patrones de comportamiento de los usuarios de Olist (Pymes y clientes).
 - Descubrir oportunidades de crecimiento para el negocio.
 - Buscar posibles soluciones que permitan a los usuarios de la plataforma vender sus productos a un mayor número de clientes.
 
@@ -33,8 +33,8 @@ Contratados por la empresa Brasileña *Olist*, vamos a situarnos en el rol de co
 
 ***Ingeniería de datos***
 
-- Informe EDA (Exploratory Data Analysis), pueden encontrar el análisis de cada tabla en: [EDA](https://github.com/MelinaRG/Proyecto-Final-DATA/tree/main/EDA)
-- Creación del Data Warehouse junto con el Modelo Entidad-Relación: [DataWarehouse](https://github.com/MelinaRG/Proyecto-Final-DATA/tree/main/DataWarehouse)
+- Informe EDA (Exploratory Data Analysis), pueden encontrar el análisis de cada tabla en: [EDA](https://github.com/MelinaRG/Proyecto-Final-DATA/tree/main/EDA).
+- Creación del Data Warehouse junto con el Modelo Entidad-Relación: [DataWarehouse](https://github.com/MelinaRG/Proyecto-Final-DATA/tree/main/DataWarehouse).
 - Pipeline de [ETL](https://github.com/MelinaRG/Proyecto-Final-DATA/tree/main/ETL) (Extract, Transform and Load), donde el archivo carga_inicial.py genera la carga de los datos ya limpios en el Data Warehouse.
 - Escalabilidad on Cloud, pensando en un futuro manejo de grandes cantidades de datos. En la carpeta [Airflow]() podrán encontrar los scripts con el pipeline que permite la carga incremental, con un gestión del flujo orquestado a través de Apache Airflow.
 
@@ -45,11 +45,11 @@ Contratados por la empresa Brasileña *Olist*, vamos a situarnos en el rol de co
 
 ***Machine Learning***
 
-- Elección y desarrollo de un modelo de [Machine Learning](https://github.com/MelinaRG/Proyecto-Final-DATA/tree/main/Machine%20Learning), en este caso elegimos un modelo de *Forecasting* para la predicción de ventas futuras
+- Elección y desarrollo de un modelo de [Machine Learning](https://github.com/MelinaRG/Proyecto-Final-DATA/tree/main/Machine%20Learning), en este caso elegimos un modelo de *Forecasting* para la predicción de ventas futuras.
 
 ***Desarrollo de un MVP***
 
-- Presentación de un producto final al cliente 
+- Presentación de un producto final al cliente .
 
 ## :small_orange_diamond: **Funcionalidades de la Plataforma - MVP**
 
