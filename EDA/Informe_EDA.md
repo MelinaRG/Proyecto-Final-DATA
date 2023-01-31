@@ -1,3 +1,9 @@
+---
+noteId: "a799f800a14e11eda2a2eba73a7d9637"
+tags: []
+
+---
+
 # **Análisis Exploratorio de datos - Olist**
 
 <img src='https://www.meta.com.br/wp-content/uploads/2022/05/Logo-Olist.png' width = 100px>
