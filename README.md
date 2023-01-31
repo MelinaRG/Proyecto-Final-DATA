@@ -96,27 +96,35 @@ En el presente repositorio se pueden observar las distintas ramas que fuimos uti
 
 ***Herramientas de colaboración y gestión de proyectos***
 
-- Discord, Google meet, Asana
+- Discord <img src="https://assets-global.website-files.com/6257adef93867e50d84d30e2/636e0a6a49cf127bf92de1e2_icon_clyde_blurple_RGB.png" width="20px" height="20px"> Google meet <img src="https://www.uc3m.es/sdic/media/sdic/img/mediana/original/im_servicios_comunicacion_google-meet_icono/im_servicios_comunicacion_google_meet.png" width="20px" height="20px"> 
+- Asana <img src="https://sites.miis.edu/shuyul/files/2017/03/asana-icon.jpg" jsaction="load:XAeZkd;" width="20px" height="20px">
 
 ***Ingenieria de datos:*** *EDA, ETL, DATAWAREHOUSE*
 
-- Python <a href="https://emoji.gg/emoji/9794-python"><img src="https://cdn3.emoji.gg/emojis/9794-python.png" width="20px" height="20px" alt="python"></a> Pandas <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" width="20px" height="20px" /> Matplotlib <img src="https://upload.wikimedia.org/wikipedia/commons/8/84/Matplotlib_icon.svg" width="20px" height="20px" /> Seaborn <img src="https://seaborn.pydata.org/_images/logo-mark-lightbg.svg" width="20px" height="20px" /> SQLAlchemy <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlalchemy/sqlalchemy-original.svg" width="30px" height="30px" /> PostgreSQL <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" width="20px" height="20px" />
+- Python <a href="https://emoji.gg/emoji/9794-python"><img src="https://cdn3.emoji.gg/emojis/9794-python.png" width="20px" height="20px" alt="python"></a> Pandas <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" width="20px" height="20px" />
+- Matplotlib <img src="https://upload.wikimedia.org/wikipedia/commons/8/84/Matplotlib_icon.svg" width="20px" height="20px" /> Seaborn <img src="https://seaborn.pydata.org/_images/logo-mark-lightbg.svg" width="20px" height="20px" /> 
+- SQLAlchemy <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlalchemy/sqlalchemy-original.svg" width="30px" height="30px" /> PostgreSQL <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" width="20px" height="20px" />
           
 
 ***Análisis de datos:*** *Business Intelligence y Machine Learning*
 
-- PowerBI <img src="https://upload.wikimedia.org/wikipedia/commons/c/cf/New_Power_BI_Logo.svg" width="20px" height="20px" /> Prophet <img src="https://images.ctfassets.net/fi0zmnwlsnja/1JkCWMEa9c6VNGlwSbAbUD/eb900356e16d88013306b246832ca6aa/2018-03-06-how-facebook-made-business-forecasting-scalable-for-the-masses-OG-image.png" width="20px" height="20px" /> Python <a href="https://emoji.gg/emoji/9794-python"><img src="https://cdn3.emoji.gg/emojis/9794-python.png" width="20px" height="20px" alt="python"></a> Pandas <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" width="20px" height="20px" /> SQLAlchemy <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlalchemy/sqlalchemy-original.svg" width="30px" height="30px" /> Plotly <img src="https://images.plot.ly/logo/new-branding/plotly-logomark.png" width="20px" height="20px" />
+- Python <a href="https://emoji.gg/emoji/9794-python"><img src="https://cdn3.emoji.gg/emojis/9794-python.png" width="20px" height="20px" alt="python"></a> Pandas <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" width="20px" height="20px" /> SQLAlchemy <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlalchemy/sqlalchemy-original.svg" width="30px" height="30px" /> Plotly <img src="https://images.plot.ly/logo/new-branding/plotly-logomark.png" width="20px" height="20px" />
+- Prophet <img src="https://images.ctfassets.net/fi0zmnwlsnja/1JkCWMEa9c6VNGlwSbAbUD/eb900356e16d88013306b246832ca6aa/2018-03-06-how-facebook-made-business-forecasting-scalable-for-the-masses-OG-image.png" width="20px" height="20px" />
+- PowerBI <img src="https://upload.wikimedia.org/wikipedia/commons/c/cf/New_Power_BI_Logo.svg" width="20px" height="20px" />
+
 
 ***Escalabilidad*** *On Cloud*
-- Azure <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg" width="20px" height="20px" /> Data Factory <img src="https://symbols.getvecta.com/stencil_28/27_data-factory.8004c08598.svg" width="20px" height="20px"> Databricks <img src="https://assets-global.website-files.com/60d9fbbfcd9fcb40bad8aac3/60fae2c9b6f2dd2ebad2ca05_databricks-logo-icon.png" width="20px" height="20px" > Airflow <img src="https://miro.medium.com/max/700/0*ICxzNyns9DR90WNS" width="20px" height="20px" >
+- Azure <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg" width="20px" height="20px" /> Data Factory <img src="https://symbols.getvecta.com/stencil_28/27_data-factory.8004c08598.svg" width="20px" height="20px"> 
+- Databricks <img src="https://assets-global.website-files.com/60d9fbbfcd9fcb40bad8aac3/60fae2c9b6f2dd2ebad2ca05_databricks-logo-icon.png" width="20px" height="20px" >
+- Airflow <img src="https://miro.medium.com/max/700/0*ICxzNyns9DR90WNS" width="20px" height="20px" >
 
 
 
 ***Producto Final*** *MVP - Minimum Viable Product*
 
-- HTML<a href="https://emoji.gg/emoji/HTML"><img src="https://cdn3.emoji.gg/emojis/HTML.png" width="20px" height="20px" alt="HTML"></a> CSS <a href="https://emoji.gg/emoji/css"><img src="https://cdn3.emoji.gg/emojis/css.png" width="20px" height="20px" alt="css"></a> JavaScript <a href="https://emoji.gg/emoji/8009-java-js"><img src="https://cdn3.emoji.gg/emojis/8009-java-js.png" width="20px" height="20px" alt="Java_Js"></a> Bootstrap Streamlit
-
-
+- HTML<a href="https://emoji.gg/emoji/HTML"><img src="https://cdn3.emoji.gg/emojis/HTML.png" width="20px" height="20px" alt="HTML"></a> CSS <a href="https://emoji.gg/emoji/css"><img src="https://cdn3.emoji.gg/emojis/css.png" width="20px" height="20px" alt="css"></a> JavaScript <a href="https://emoji.gg/emoji/8009-java-js"><img src="https://cdn3.emoji.gg/emojis/8009-java-js.png" width="20px" height="20px" alt="Java_Js"></a>
+- Bootstrap <img src="https://cdn-icons-png.flaticon.com/512/5968/5968672.png" width="20px" height="20px" > 
+- Streamlit <img src="https://res.cloudinary.com/crunchbase-production/image/upload/c_lpad,h_256,w_256,f_auto,q_auto:eco,dpr_1/z3ahdkytzwi1jxlpazje" width="20px" height="20px">
 
 ## **Gracias por leer hasta el final! :grin:**
 
