@@ -30,7 +30,7 @@ def etl_product_cat(product_cat_name):
     product_cat_name["product_category_name"]=product_cat_name["product_category_name"].str.replace("_"," ")
     product_cat_name["product_category_name_english"]=product_cat_name["product_category_name_english"].str.replace("_"," ")
 
-    engine = create_engine('postgresql://olist:IHCRtcefMFbJIjUMXuUMtcIfpTAEo5d1@dpg-cf3enqun6mplnpe950v0-a.oregon-postgres.render.com:5432/olist')
+    engine = create_engine('postgresql://meli@datapfpostgres:hola123#@datapfpostgres.postgres.database.azure.com:5432/postgres')
 
     product_cat_name.to_sql('product_category_name_translation', engine, if_exists='append', index=False)
 
@@ -76,7 +76,7 @@ def etl_geolocation(geolocation, sellers, customers):
     # Elimino geolocation_latitude y geolocation_longitude y uf
     df_final_procesado = df_procesado.drop(columns=['uf','geolocation_lat','geolocation_lng'])
 
-    engine = create_engine('postgresql://olist:IHCRtcefMFbJIjUMXuUMtcIfpTAEo5d1@dpg-cf3enqun6mplnpe950v0-a.oregon-postgres.render.com:5432/olist')
+    engine = create_engine('postgresql://meli@datapfpostgres:hola123#@datapfpostgres.postgres.database.azure.com:5432/postgres')
 
     df_final_procesado.to_sql('geolocation', engine, if_exists='append', index=False)
 
@@ -94,7 +94,7 @@ def etl_marketing(marketing):
 
     marketing.fillna("SIN DATO",inplace=True)
 
-    engine = create_engine('postgresql://olist:IHCRtcefMFbJIjUMXuUMtcIfpTAEo5d1@dpg-cf3enqun6mplnpe950v0-a.oregon-postgres.render.com:5432/olist')
+    engine = create_engine('postgresql://meli@datapfpostgres:hola123#@datapfpostgres.postgres.database.azure.com:5432/postgres')
 
     marketing.to_sql('marketing_qualified_leads', engine, if_exists='append', index=False)
 
@@ -115,7 +115,7 @@ def etl_sellers():
 
     sellers['seller_zip_code_prefix'] = sellers['seller_zip_code_prefix'].astype('string')
 
-    engine = create_engine('postgresql://olist:IHCRtcefMFbJIjUMXuUMtcIfpTAEo5d1@dpg-cf3enqun6mplnpe950v0-a.oregon-postgres.render.com:5432/olist')
+    engine = create_engine('postgresql://meli@datapfpostgres:hola123#@datapfpostgres.postgres.database.azure.com:5432/postgres')
 
     sellers.to_sql('olist_sellers', engine, if_exists='append', index=False)
 
@@ -133,7 +133,7 @@ def etl_closed_deals(closed_deals):
 
     closed_deals.fillna("SIN DATO",inplace=True)
 
-    engine = create_engine('postgresql://olist:IHCRtcefMFbJIjUMXuUMtcIfpTAEo5d1@dpg-cf3enqun6mplnpe950v0-a.oregon-postgres.render.com:5432/olist')
+    engine = create_engine('postgresql://meli@datapfpostgres:hola123#@datapfpostgres.postgres.database.azure.com:5432/postgres')
 
     closed_deals.to_sql('closed_deals', engine, if_exists='append', index=False)
 
@@ -149,7 +149,7 @@ def etl_customers():
 
     customers.drop(columns=["customer_city","customer_state"],axis=1,inplace=True)
 
-    engine = create_engine('postgresql://olist:IHCRtcefMFbJIjUMXuUMtcIfpTAEo5d1@dpg-cf3enqun6mplnpe950v0-a.oregon-postgres.render.com:5432/olist')
+    engine = create_engine('postgresql://meli@datapfpostgres:hola123#@datapfpostgres.postgres.database.azure.com:5432/postgres')
 
     customers.to_sql('customers', engine, if_exists='append', index=False)
 
@@ -205,7 +205,7 @@ def etl_orders(orders):
    
     orders = orders.merge(dftotalordercost[['total_order_cost']], on='order_id', how='left')    
 
-    engine = create_engine('postgresql://olist:IHCRtcefMFbJIjUMXuUMtcIfpTAEo5d1@dpg-cf3enqun6mplnpe950v0-a.oregon-postgres.render.com:5432/olist')
+    engine = create_engine('postgresql://meli@datapfpostgres:hola123#@datapfpostgres.postgres.database.azure.com:5432/postgres')
 
     orders.to_sql('orders', engine, if_exists='append', index=False)
 
@@ -219,7 +219,7 @@ def etl_orders(orders):
 def etl_payments(payments):
     payments.drop(columns=["payment_sequential"],axis= 1, inplace=True)
 
-    engine = create_engine('postgresql://olist:IHCRtcefMFbJIjUMXuUMtcIfpTAEo5d1@dpg-cf3enqun6mplnpe950v0-a.oregon-postgres.render.com:5432/olist')
+    engine = create_engine('postgresql://meli@datapfpostgres:hola123#@datapfpostgres.postgres.database.azure.com:5432/postgres')
 
     payments.to_sql('order_payments', engine, if_exists='append', index=False)
 
@@ -237,7 +237,7 @@ def etl_reviews(reviews):
     reviews["review_comment_title"].fillna("SIN TITULO",inplace=True)
     reviews["review_comment_message"].fillna("SIN COMENTARIOS",inplace=True)
 
-    engine = create_engine('postgresql://olist:IHCRtcefMFbJIjUMXuUMtcIfpTAEo5d1@dpg-cf3enqun6mplnpe950v0-a.oregon-postgres.render.com:5432/olist')
+    engine = create_engine('postgresql://meli@datapfpostgres:hola123#@datapfpostgres.postgres.database.azure.com:5432/postgres')
 
     reviews.to_sql('order_reviews', engine, if_exists='append', index=False)
 
@@ -255,7 +255,7 @@ def etl_products(products):
     products["product_photos_qty"] = products["product_photos_qty"] .astype("int")
     products["product_category_name"]=products["product_category_name"].str.replace("_"," ")
 
-    engine = create_engine('postgresql://olist:IHCRtcefMFbJIjUMXuUMtcIfpTAEo5d1@dpg-cf3enqun6mplnpe950v0-a.oregon-postgres.render.com:5432/olist')
+    engine = create_engine('postgresql://meli@datapfpostgres:hola123#@datapfpostgres.postgres.database.azure.com:5432/postgres')
 
     products.to_sql('products', engine, if_exists='append', index=False)
 
@@ -269,7 +269,7 @@ def etl_products(products):
 def etl_items(items):
     items["shipping_limit_date"]=pd.to_datetime(items["shipping_limit_date"],format="%Y-%m-%d %H:%M:%S")
 
-    engine = create_engine('postgresql://olist:IHCRtcefMFbJIjUMXuUMtcIfpTAEo5d1@dpg-cf3enqun6mplnpe950v0-a.oregon-postgres.render.com:5432/olist')
+    engine = create_engine('postgresql://meli@datapfpostgres:hola123#@datapfpostgres.postgres.database.azure.com:5432/postgres')
 
     items.to_sql('order_items', engine, if_exists='append', index=False)
 
