@@ -1,4 +1,5 @@
 import streamlit as st
+import base64
 
 st.set_page_config(page_title='Olist', 
                    page_icon=None, 
@@ -7,16 +8,15 @@ st.set_page_config(page_title='Olist',
                    menu_items=None)
 
 
-import base64
 
-@st.cache(allow_output_mutation=True)
-def get_base64_of_bin_file(bin_file):
+def get_base64(bin_file):
     with open(bin_file, 'rb') as f:
         data = f.read()
     return base64.b64encode(data).decode()
 
-def set_png_as_page_bg(png_file):
-    bin_str = get_base64_of_bin_file(png_file)
+
+def set_background(png_file):
+    bin_str = get_base64(png_file)
     page_bg_img = '''
     <style>
     body {
@@ -25,11 +25,10 @@ def set_png_as_page_bg(png_file):
     }
     </style>
     ''' % bin_str
-    
     st.markdown(page_bg_img, unsafe_allow_html=True)
-    return
 
-set_png_as_page_bg('background.png')
+set_background('./assets/fondo.png')
+
 
 
 st.title('TA Tools :rocket:')
