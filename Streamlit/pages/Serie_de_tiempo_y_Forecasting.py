@@ -39,7 +39,10 @@ def get_df_transformed(_conn):
     results = cursor.fetchall()
     # Traigo los columns names de cursor.description
     column_names = [column[0] for column in cursor.description]
-    orders = pd.DataFrame(results, columns=column_names)
+    orders = pd.DataFrame(results, columns=column_names,
+                          dtype={'total_order_cost': 'float'})
+    orders["order_purchase_timestamp"] = pd.to_datetime(
+        orders["order_purchase_timestamp"], format="%Y-%m-%d %H:%M:%S")
 
     # Trasformaciones
     orders.dropna(subset=['total_order_cost'], inplace=True)
