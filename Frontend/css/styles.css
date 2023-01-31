@@ -1,5 +1,8 @@
 /*Variables del proyecto*/
-@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap");
+@font-face {
+  font-family: 'DM Sans', sans-serif;
+  src: url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap") format("truetype"); }
+
 /***************
 ------BODY------
 ****************/
@@ -29,14 +32,70 @@ header {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: bottom; }
-  header nav #logo_navbar {
-    height: 50px; }
+  header nav {
+    background-color: None; }
+    header nav #logo_navbar {
+      height: 50px; }
+    header nav .container-fluid {
+      padding-left: 15%;
+      padding-right: 15%;
+      background-color: None; }
+      header nav .container-fluid .navbar-nav {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-pack: distribute;
+            justify-content: space-around;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+        width: 60%; }
+        header nav .container-fluid .navbar-nav .nav-item {
+          display: -webkit-box;
+          display: -ms-flexbox;
+          display: flex;
+          -ms-flex-pack: distribute;
+              justify-content: space-around;
+          -webkit-box-align: center;
+              -ms-flex-align: center;
+                  align-items: center;
+          text-align: center;
+          margin: auto; }
+          header nav .container-fluid .navbar-nav .nav-item .nav-link {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-pack: center;
+                -ms-flex-pack: center;
+                    justify-content: center;
+            -webkit-box-align: center;
+                -ms-flex-align: center;
+                    align-items: center;
+            text-align: center;
+            font-weight: 700;
+            text-transform: none;
+            -webkit-transition: all 1s;
+            transition: all 1s; }
+            header nav .container-fluid .navbar-nav .nav-item .nav-link .active {
+              font-weight: 800; }
+            header nav .container-fluid .navbar-nav .nav-item .nav-link:hover {
+              -webkit-transition: all 1s;
+              transition: all 1s;
+              -webkit-text-decoration-color: rgba(0, 0, 0, 0.6);
+                      text-decoration-color: rgba(0, 0, 0, 0.6);
+              -webkit-text-decoration-line: underline;
+                      text-decoration-line: underline; }
   header .nav_custom {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    background-color: rgba(255, 255, 255, 0.95) !important;
     position: fixed;
     z-index: 1000;
     top: 0;
     left: 0;
-    background-color: #435CC3;
     height: 8vh;
     width: 100%; }
 
@@ -155,4 +214,14 @@ header {
 main #about {
   padding-top: 2rem;
   padding-bottom: 2rem; }
+
+/***************
+-----FOOTER-----
+****************/
+/*Variables del proyecto*/
+footer {
+  background-color: #151516;
+  height: 20vh; }
+  footer h1 {
+    color: whitesmoke; }
 /*# sourceMappingURL=styles.css.map */

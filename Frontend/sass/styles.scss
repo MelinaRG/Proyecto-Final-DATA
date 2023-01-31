@@ -1,5 +1,10 @@
 @import "ownvariables";
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap');
+// https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600&display=swap
+@font-face{
+    font-family: 'DM Sans', sans-serif;
+    src: url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap') format('truetype');
+}
+// @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap');
 
 //ORIGEN DE SCSS
 /***************
@@ -15,3 +20,4 @@ body {
 @import "reset";
 @import "navbar";
 @import "main";
+@import "footer";
