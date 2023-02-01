@@ -36,7 +36,7 @@ Contratados por la empresa Brasileña *Olist*, vamos a situarnos en el rol de co
 - Informe EDA (Exploratory Data Analysis), pueden encontrar el análisis de cada tabla en: [EDA](https://github.com/MelinaRG/Proyecto-Final-DATA/tree/main/EDA).
 - Creación del Data Warehouse junto con el Modelo Entidad-Relación: [DataWarehouse](https://github.com/MelinaRG/Proyecto-Final-DATA/tree/main/DataWarehouse).
 - Pipeline de [ETL](https://github.com/MelinaRG/Proyecto-Final-DATA/tree/main/ETL) (Extract, Transform and Load), donde el archivo carga_inicial.py genera la carga de los datos ya limpios en el Data Warehouse.
-- Escalabilidad on Cloud, pensando en un futuro manejo de grandes cantidades de datos. En la carpeta [Airflow]() podrán encontrar los scripts con el pipeline que permite la carga incremental, con un gestión del flujo orquestado a través de Apache Airflow.
+- Escalabilidad on Cloud, pensando en un futuro manejo de grandes cantidades de datos. En la carpeta [Airflow](https://github.com/MelinaRG/Proyecto-Final-DATA/tree/main/Airflow) podrán encontrar los scripts con el pipeline que permite la carga incremental, con un gestión del flujo orquestado a través de Apache Airflow.
 
 ***Análisis de datos***
 
@@ -51,10 +51,21 @@ Contratados por la empresa Brasileña *Olist*, vamos a situarnos en el rol de co
 
 - Presentación de un producto final al cliente .
 
-## :small_orange_diamond: **Funcionalidades de la Plataforma - MVP**
+## :small_blue_diamond: **Plataforma - MVP**
 
+*Link al MVP*
 
-1- `LOGIN`: El acceso a la plataforma es exclusivo para los TAs.
+*Funcionalidades de la plataforma*:
+
+- Home: página de inicio con una breve descripción del proyecto y de nuestra consultora (about us)
+
+- Productos: 4 tarjetas que tienen links que nos llevan a diferentes páginas:
+             Dashboard
+             Modelo de ML
+             Reporte del Análisis de datos
+             Repositorio de Github
+             
+- Equipo de trabajo: integrantes y sus respectivos roles
 
 
 ## :small_blue_diamond: **Equipo de Trabajo**
