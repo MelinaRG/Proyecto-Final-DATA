@@ -53,8 +53,6 @@ Contratados por la empresa Brasileña *Olist*, vamos a situarnos en el rol de co
 
 ## :small_blue_diamond: **Plataforma - MVP**
 
-*Link al MVP*
-
 *Funcionalidades de la plataforma*:
 
 - Home: página de inicio con una breve descripción del proyecto y de nuestra consultora (about us)
