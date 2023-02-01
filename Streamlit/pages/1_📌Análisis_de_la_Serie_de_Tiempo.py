@@ -16,7 +16,9 @@ import os
 import time
 
 
-@st.experimental_singleton(show_spinner=True)
+# DATABASE CALL #
+
+@st.experimental_singleton(show_spinner=False)
 def init_connection():
     """Initialize connection to database
 
@@ -30,10 +32,12 @@ def init_connection():
     return connection
 
 
-conn = init_connection()
+with st.spinner('Conectando a la base de datos'):
+    # DATABASE CONNECTION #
+    conn = init_connection()
 
 
-@st.experimental_memo(ttl=600)
+@st.experimental_memo(ttl=600, show_spinner=False)
 def get_df_transformed():
     """Bring and transform a table from database and convert to dataframe
 
@@ -83,20 +87,20 @@ def predicción(df_fechas):
 
 def main():
     # TITULO
-    st.title('Análisis de la Serie de tiempo - Ventas de Olist')
+    st.title('Análisis de la Serie de tiempo - Ventas de Olist :bar_chart:')
     st.markdown('---')
-    # INTRODUCCIÓN
-    st.header('Componentes de Tendencia y Estacionales')
-    st.markdown(""" Es importante analizar y entender la evolución y el comportamiento de 
-                los datos reales de venta a lo largo del tiempo. Por eso se presentan los componentes
-                de la serie a partir de la predicción correspondiente.""")
+
     # CARGA DEL DATAFRAME
-    with st.spinner('Wait for it...'):
+    with st.spinner('Extrayendo datos...'):
         # DATABASE CONNECTION #
         df_d = get_df_transformed()
         conn.close()
-    st.success('Datos cargados!')
-
+    st.success('Datos cargados exitosamente!')
+    # INTRODUCCIÓN
+    st.subheader('Componentes de Tendencia y Estacionales')
+    st.markdown(""" Es importante analizar y entender la evolución y el comportamiento de 
+                los datos reales de venta a lo largo del tiempo. Por eso se presentan los componentes
+                de la serie a partir de la predicción correspondiente.""")
     # SIDEBAR
     with st.sidebar:
         st.header('For our client:')

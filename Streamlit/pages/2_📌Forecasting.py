@@ -1,3 +1,4 @@
+import base64
 import streamlit as st
 import os
 import numpy as np
@@ -14,6 +15,7 @@ from prophet.serialize import model_to_json, model_from_json
 from datetime import datetime, timedelta
 from PIL import Image
 import time
+import os
 
 
 # DATABASE #
@@ -25,11 +27,15 @@ def init_connection():
     Returns:
         connection to postgres sql database
     """
-    #return psycopg2.connect("host='datapfpostgres.postgres.database.azure.com' port='5432' dbname='postgres' user='meli@datapfpostgres' password='hola123#'")
+    # return psycopg2.connect("host='datapfpostgres.postgres.database.azure.com' port='5432' dbname='postgres' user='meli@datapfpostgres' password='hola123#'")
 
     return psycopg2.connect("host='dpg-cf3enqun6mplnpe950v0-a.oregon-postgres.render.com' port='5432' dbname='olist' user='olist' password='IHCRtcefMFbJIjUMXuUMtcIfpTAEo5d1'")
+
+
 # 'postgresql://olist:IHCRtcefMFbJIjUMXuUMtcIfpTAEo5d1@dpg-cf3enqun6mplnpe950v0-a.oregon-postgres.render.com:5432/olist'
-conn = init_connection()
+with st.spinner('Conectando a la base de datos'):
+    # DATABASE CONNECTION #
+    conn = init_connection()
 
 
 @st.experimental_memo(ttl=600)
@@ -102,14 +108,15 @@ def main():
     # TITULOS
     st.title('Forcasting de ventas :chart_with_upwards_trend:')
     st.markdown('---')
+
+    # CARGA DEL DATAFRAME
+    with st.spinner('Extrayendo datos...'):
+        df_d = get_df_transformed()
+        conn.close()
+    st.success('Datos cargados exitosamente!')
     st.markdown(""" Es importante analizar y entender la evolución y el comportamiento de 
                 los datos reales de venta a lo largo del tiempo. Por eso se presentan los componentes
                 de la serie a partir de la predicción correspondiente.""")
-    # CARGA DEL DATAFRAME
-    with st.spinner('Wait for it...'):
-        df_d = get_df_transformed()
-        conn.close()
-    st.success('Datos cargados!')
 
     # SIDEBAR
     with st.sidebar:
