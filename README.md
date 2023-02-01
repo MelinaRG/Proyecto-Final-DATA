@@ -65,7 +65,7 @@ Contratados por la empresa Brasileña *Olist*, vamos a situarnos en el rol de co
              Reporte del Análisis de datos
              Repositorio de Github
              
-- Equipo de trabajo: integrantes y sus respectivos roles
+- Equipo de trabajo: integrantes y sus respectivos roles en el desarrollo del projecto.
 
 
 ## :small_blue_diamond: **Equipo de Trabajo**
