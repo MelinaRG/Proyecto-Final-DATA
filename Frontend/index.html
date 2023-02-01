@@ -13,7 +13,7 @@
     <script src="https://kit.fontawesome.com/15bd92cd67.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <header class="d-flex justify-content-end align-items-center">
+    <header class="d-flex justify-content-end align-items-center position-relative">
       <nav class="navbar navbar-expand-lg navbar-light bg-light nav_custom">
           <div class="container-fluid">
             <a class="navbar-brand" href="#">
@@ -25,59 +25,60 @@
             <div class="collapse navbar-collapse d-flex justify-content-center align-items-center" > 
               <ul class="navbar-nav custom_ul">
                 <li class="nav-item">
-                  🚀<a class="nav-link active" href="#">HOME
-                    <span class="visually-hidden">(current)</span>
+                  <a class="nav-link active fs-5" href="#">HOME
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">Features</a>
+                  <a class="nav-link fs-5" href="#id_about">Sobre Nosotros</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">Pricing</a>
+                  <a class="nav-link fs-5" href="#id_producto">Producto</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">About</a>
+                  <a class="nav-link fs-5" href="#id_equipo">Equipo</a>
                 </li>
                 </li>
               </ul>
             </div>
           </div>
       </nav>
+      <!-- IMAGEN -->
+      <img class="position-absolute top-10 end-0 translate-middle-y z-1 placeholder-wave placeholder-glow" src="./assets/carrito_compra.png" alt="carrito_compra" width="20%">
 
-
-      <div class="container-fluid w-50 m-0">
+      <!-- TITULO -->
+      <div class="container-fluid w-50 m-0 position-relative z-5">
         <div class="row justify-content-end m-0">
           <div class="col-10">
-            <h1 class="text-body-emphasis m-auto text-start text-capitalize id="principal-title">Producto digital de data y análisis del negocio e-commerce <span class = "text-info">Olist</span> Brasil</h1>
+            <h1 class="text-body-emphasis m-auto text-start text-capitalize fw-1200 fs-1" >Producto digital de data y análisis del negocio e-commerce <span class = "text-info fs-1">Olist</span> Brasil</h1>
             <br>
             <br>
-            <h5 class="text-dark m-auto text-start text-uppercase" > Presentamos el producto final destinado al gigante del mercado ecommerce en Brasil</h5>
+            <p class="text-dark m-auto text-start fs-3 fw-bold" > Presentamos el producto final destinado al gigante del mercado ecommerce en Brasil</p>
           </div>
         </div>
       </div>
     </header>
 
-
+    <!-- MAIN -->
     <main>
         <!-- CONTEXTO ABOUT US -->
-        <section class="position-relative">
+        <section class="position-relative" id="id_about">
+          <img class="position-absolute top-50 start-0 translate-middle-y z-1 rounded-end " src="./assets/equipo.png" alt="carrito_compra" width="30%">
           <div class="container-fluid w-75">
             <div class="row justify-content-center pt-4 pb-4">
-              <h1 class="text-capitalize text-body-emphasis w-75 m-auto text-center">Nuestra consultora</h1>
-            </div>
+              <h1 class="text-capitalize text-body-emphasis w-75 m-auto text-center" >Nuestra consultora</h1>
+            </div> 
             <div class="row justify-content-end pt-2">
               <div class="col-8 text-end">
                 <h4 class="text-capitalize">Somos <span class="text-warning">Racont</span></h4>
-                  <p>Desde 2020 ofrecemos nuestros servicios en Data. Somos una consultora joven. nos caracteriza la energía puesta en cada Proyecto.
+                  <p>Desde 2020 ofrecemos nuestros servicios en Data. Somos una consultora joven. Nos caracteriza la energía puesta en cada Proyecto.
 
-                    Donde una persona ve números y palabras sin sentido, nosotros aplicamos nuestros conocimientos y encontramos la historia que tienen para contar.
+                    Donde una persona ve números y palabras sin sentido, nosotros aplicamos nuestros conocimientos y encontramos la historia que tienen para contar. <br><br>
 
                     Nuestro equipo multidisciplinario cuenta con las herramientas, conocimientos y experiencia necesarias que, aplicadas en conjunto, nos llevan a generar resultados que exceden las expectativas.
                   </p>
               </div>
             </div>
           </div>
-          <img class="position-absolute top-50 start-0 translate-middle-y z-1" src="./assets/carrito_compra.png" alt="carrito_compra" width="20%">
         </section>
 
         <div>
@@ -85,16 +86,16 @@
         </div>
 
         <!-- PRESENTACIÓN DEL PRODUCTO DIGITAL -->
-        <section class="position-relative">
+        <section class="position-relative" id="id_producto">
           <div class="container-fluid w-75">
 
             <div class="row justify-content-center pt-4 pb-4">
-              <h1 class="text-capitalize text-body-emphasis w-75 m-auto text-center">Producto presentado al cliente</h1>
+              <h1 class="text-capitalize text-body-emphasis w-75 m-auto text-center" >Producto presentado al cliente</h1>
             </div>
 
             <div class="row justify-content-center pt-2">
               <div class="w-20">
-                  <h4 class="text-capitalize">Somos <span class="text-warning">Racont</span></h4>
+                  <h4 class="text-capitalize">Ofrecemos <span class="text-danger">Calidad</span></h4>
                   <p>Desde 2020 ofrecemos nuestros servicios en Data. Somos una consultora joven. nos caracteriza la energía puesta en cada Proyecto.
 
                     Donde una persona ve números y palabras sin sentido, nosotros aplicamos nuestros conocimientos y encontramos la historia que tienen para contar.
@@ -109,7 +110,7 @@
 
                   <div class="card col-4 align-items-center me-1 mb-1 p-0">
                     <h3 class="card-header fs-5 w-100">Dashboard Analytics</h3>
-                    <img class = "w-50 pt-1" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/New_Power_BI_Logo.svg/630px-New_Power_BI_Logo.svg.png" height = "80%" alt="PoweBI">
+                    <img class = "w-50 pt-1" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/New_Power_BI_Logo.svg/630px-New_Power_BI_Logo.svg.png" height="80%"  alt="PoweBI">
 
                     <div class="card-body">
                       <p class="card-text fs-6">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -121,7 +122,7 @@
 
                   <div class="card col-4 align-items-center me-1 mb-1 p-0">
                     <h3 class="card-header fs-5 w-100">Forecasting de ventas</h3>
-                    <img class = "w-50 pt-1" src="https://res.cloudinary.com/crunchbase-production/image/upload/c_lpad,f_auto,q_auto:eco,dpr_1/z3ahdkytzwi1jxlpazje" height = "80%" alt="Streamlit">
+                    <img class = "w-50 pt-1" src="https://res.cloudinary.com/crunchbase-production/image/upload/c_lpad,f_auto,q_auto:eco,dpr_1/z3ahdkytzwi1jxlpazje" height = "50%" alt="Streamlit">
 
                     <div class="card-body">
                       <p class="card-text fs-6">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -133,7 +134,7 @@
 
                   <div class="card col-4 align-items-center me-1 p-0">
                     <h3 class="card-header fs-5 w-100">Informes Final del producto</h3>
-                    <img class = "w-50 pt-1" src="https://cdn-icons-png.flaticon.com/512/337/337946.png" height = "80%" alt="PDF">
+                    <img class = "w-50 pt-1" src="https://cdn-icons-png.flaticon.com/512/337/337946.png" height = "50%" alt="PDF">
 
                     <div class="card-body">
                       <p class="card-text fs-6"">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -145,7 +146,7 @@
 
                   <div class="card col-4 align-items-center me-1 mb-1 p-0">
                     <h3 class="card-header fs-5 w-100">Documentación del Proyecto</h3>
-                    <img class = "w-50 pt-1" src="https://cdn-icons-png.flaticon.com/512/25/25231.png" height = "80%" alt="PDF">
+                    <img class = "w-50 pt-1" src="https://cdn-icons-png.flaticon.com/512/25/25231.png" height = "50%" alt="PDF">
 
                     <div class="card-body">
                       <p class="card-text fs-6">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -166,88 +167,89 @@
         </div>
 
         <!-- EQUIPO DE TRABAJO -->
-        <section class="position-relative">
+        <section class="position-relative" id="id_equipo">
           <div class="container-fluid w-75">
             <div class="row justify-content-center pt-4 pb-4">
-              <h1 class="text-capitalize text-body-emphasis w-75 m-auto text-center">Nuestro Equipo de Trabajo</h1>
+              <h1 class="text-capitalize text-body-emphasis w-75 m-auto text-center" >Nuestro Equipo de Trabajo</h1>
             </div>
 
-            <div class="row justify-content-center pt-2"></div>
-              
+            <div class="row justify-content-center pt-2">
               <p>Nuestro equipo de trabajo está compuesto por 5 profesionales de Data especializados en distintas áreas (Analítica, Machine Learning, Ingeniería de datos, Habilidades blandas, Gestión de proyectos).
-                Además poseen un background previo muy diverso relacionado a la ciencia, Ingeniería, programación y contabilidad, lo que hace que se pueda mirar los distintos problemas con una mirada integral que permite abordar los problemas de la mejor manera.
+                Además poseen un background previo muy diverso relacionado a la ciencia, Ingeniería, programación y contabilidad, lo que hace que se pueda abordaros distintos problemas con una mirada integral que permite abordar los problemas de la mejor manera.
               </p>
             </div>
-            <!-- FOTOS -->
+            
             <div class="container align-items-center">
-              <div class="row justify-content-center align-items-center">
-                <div class="col-2 text-center">
-                  <img src="./assets/Foto_Emma.png" class="rounded-circle border border-2 " alt="Emmanuel Corral" width="90%">
+                <!-- FOTOS -->
+                <div class="row justify-content-around align-items-center">
+                    <div class="col-2 text-center">
+                      <img src="./assets/Foto_Emma.png" class="rounded-circle border border-2 " alt="Emmanuel Corral" width="90%">
+                    </div>
+                    <div class="col-2 text-center">
+                      <img src="./assets/Foto_Nico.png" class="rounded-circle border border-2" alt="Nicolas Lazarte" width="90%">
+                    </div>
+                    <div class="col-2 text-center">
+                      <img src="./assets/Foto_Meli.png" class="rounded-circle border border-2" alt="Melina Griffo" width="90%">
+                    </div>
+                    <div class="col-2 text-center">
+                      <img src="./assets/Foto_Isaac.png" class="rounded-circle border border-2" alt="Isaac Peña" width="90%">
+                    </div>
+                    <div class="col-2 text-center">
+                      <img src="./assets/Foto_Julio.png" class="rounded-circle border border-2" alt="Julio Postigo" width="90%">
+                    </div>
                 </div>
-                <div class="col-2 text-center">
-                  <img src="./assets/Foto_Nico.png" class="rounded-circle border border-2" alt="Nicolas Lazarte" width="90%">
+                <!-- NOMBRE -->
+                <div class="row justify-content-around align-items-center">
+                    <div class="col-2 text-center m-auto p-0">
+                      <p class="fs-5 fw-bold text-warning p-0">Emanuel Corral</p>
+                    </div>
+                    <div class="col-2 text-center m-auto p-0">
+                      <p class="fs-5 fw-bold text-warning p-0">Nicolas Lazarte</p>
+                    </div>
+                    <div class="col-2 text-center m-auto p-0">
+                      <p class="fs-5 fw-bold text-warning p-0">Melina Griffo</p>
+                    </div>
+                    <div class="col-2 text-center m-auto p-0">
+                      <p class="fs-5 fw-bold text-warning p-0">Isaac Peña</p>
+                    </div>
+                    <div class="col-2 text-center m-auto p-0">
+                      <p class="fs-5 fw-bold text-warning p-0">Julio Postigo</p>
+                    </div>
                 </div>
-                <div class="col-2 text-center">
-                  <img src="./assets/Foto_Meli.png" class="rounded-circle border border-2" alt="Melina Griffo" width="90%">
+                <!-- CONTACTO -->
+                <div class="row justify-content-around align-items-center">
+                    <div class="col-2 text-center">
+                      <a href=""><i class="fa-brands fa-linkedin fa-lg"></i></a>
+                      <a href=""><i class="fa-brands fa-github fa-lg"></i></a>
+                      <a href=""><i class="fa-solid fa-envelope fa-lg"></i></a>
+                    </div>
+                    <div class="col-2 text-center">
+                      <a href=""><i class="fa-brands fa-linkedin fa-lg"></i></a>
+                      <a href=""><i class="fa-brands fa-github fa-lg"></i></a>
+                      <a href=""><i class="fa-solid fa-envelope fa-lg"></i></a>
+                    </div>
+                    <div class="col-2 text-center">
+                      <a href=""><i class="fa-brands fa-linkedin fa-lg"></i></a>
+                      <a href=""><i class="fa-brands fa-github fa-lg"></i></a>
+                      <a href=""><i class="fa-solid fa-envelope fa-lg"></i></a>
+                    </div>
+                    <div class="col-2 text-center">
+                      <a href=""><i class="fa-brands fa-linkedin fa-lg"></i></a>
+                      <a href=""><i class="fa-brands fa-github fa-lg"></i></a>
+                      <a href=""><i class="fa-solid fa-envelope fa-lg"></i></a>
+                    </div>
+                    <div class="col-2 text-center">
+                      <a href=""><i class="fa-brands fa-linkedin fa-lg"></i></a>
+                      <a href=""><i class="fa-brands fa-github fa-lg"></i></a>
+                      <a href=""><i class="fa-solid fa-envelope fa-lg"></i></a>
+                    </div>
                 </div>
-                <div class="col-2 text-center">
-                  <img src="./assets/Foto_Isaac.png" class="rounded-circle border border-2" alt="Isaac Peña" width="90%">
-                </div>
-                <div class="col-2 text-center">
-                  <img src="./assets/Foto_Julio.png" class="rounded-circle border border-2" alt="Julio Postigo" width="90%">
-                </div>
-              </div>
-              <!-- NOMBRE -->
-              <div class="row justify-content-center align-items-center">
-                <div class="col-2 text-center">
-                  <p class="fw">Emanuel Corral</p>
-                </div>
-                <div class="col-2 text-center">
-                  <p></p>
-                </div>
-                <div class="col-2 text-center">
-                  <p></p>
-                </div>
-                <div class="col-2 text-center">
-                  <p></p>
-                </div>
-                <div class="col-2 text-center">
-                  <p></p>
-                </div>
-              <!-- CONTACTO -->
-              <div class="row align-items-center">
-                <div class="col-2 text-center">
-                  <a href=""><iframe src="" frameborder="0"></iframe></a>
-                  <a href=""><iframe src="" frameborder="0"></iframe></a>
-                  <a href=""><iframe src="" frameborder="0"></iframe></a>
-                </div>
-                <div class="col-2 text-center">
-                  <a href=""><iframe src="" frameborder="0"></iframe></a>
-                  <a href=""><iframe src="" frameborder="0"></iframe></a>
-                  <a href=""><iframe src="" frameborder="0"></iframe></a>
-                </div>
-                <div class="col-2 text-center">
-                  <a href=""><iframe src="" frameborder="0"></iframe></a>
-                  <a href=""><iframe src="" frameborder="0"></iframe></a>
-                  <a href=""><iframe src="" frameborder="0"></iframe></a>
-                </div>
-                <div class="col-2 text-center">
-                  <a href=""><iframe src="" frameborder="0"></iframe></a>
-                  <a href=""><iframe src="" frameborder="0"></iframe></a>
-                  <a href=""><iframe src="" frameborder="0"></iframe></a>
-                </div>
-                <div class="col-2 text-center">
-                  <a href=""><iframe src="" frameborder="0"></iframe></a>
-                  <a href=""><iframe src="" frameborder="0"></iframe></a>
-                  <a href=""><iframe src="" frameborder="0"></iframe></a>
-                </div>
-              </div>
             </div>
           </div>
         </section>
 
     </main>
-
+    <!-- FOOTER -->
     <footer class="pt-4 pb-4 d-flex">
       <div class="container text-center text-white">
         <div class="row align-items-start">
