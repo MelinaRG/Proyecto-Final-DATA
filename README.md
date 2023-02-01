@@ -36,7 +36,7 @@ Contratados por la empresa Brasileña *Olist*, vamos a situarnos en el rol de co
 - Informe EDA (Exploratory Data Analysis), pueden encontrar el análisis de cada tabla en: [EDA](https://github.com/MelinaRG/Proyecto-Final-DATA/tree/main/EDA).
 - Creación del Data Warehouse junto con el Modelo Entidad-Relación: [DataWarehouse](https://github.com/MelinaRG/Proyecto-Final-DATA/tree/main/DataWarehouse).
 - Pipeline de [ETL](https://github.com/MelinaRG/Proyecto-Final-DATA/tree/main/ETL) (Extract, Transform and Load), donde el archivo carga_inicial.py genera la carga de los datos ya limpios en el Data Warehouse.
-- Escalabilidad on Cloud, pensando en un futuro manejo de grandes cantidades de datos. En la carpeta [Airflow]() podrán encontrar los scripts con el pipeline que permite la carga incremental, con un gestión del flujo orquestado a través de Apache Airflow.
+- Escalabilidad on Cloud, pensando en un futuro manejo de grandes cantidades de datos. En la carpeta [Airflow](https://github.com/MelinaRG/Proyecto-Final-DATA/tree/main/Airflow) podrán encontrar los scripts con el pipeline que permite la carga incremental, con un gestión del flujo orquestado a través de Apache Airflow.
 
 ***Análisis de datos***
 
