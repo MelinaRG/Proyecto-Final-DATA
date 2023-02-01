@@ -26,10 +26,8 @@ def init_connection():
         connection to postgres sql database
     """
     # Engine con las credenciales
-    engine = create_engine(
-        'postgresql://olist:IHCRtcefMFbJIjUMXuUMtcIfpTAEo5d1@dpg-cf3enqun6mplnpe950v0-a.oregon-postgres.render.com:5432/olist')
-    connection = engine.connect()
-    return connection
+    # return connection
+    return psycopg2.connect(**st.secrets["postgres"])
 
 
 with st.spinner('Conectando a la base de datos'):
@@ -44,7 +42,15 @@ def get_df_transformed():
     Returns:
         DataFrame: daily orders
     """
-    orders = pd.read_sql_table('orders', conn)
+    #orders = pd.read_sql_table('orders', conn)
+    # orders["order_purchase_timestamp"] = pd.to_datetime(
+    # orders["order_purchase_timestamp"], format="%Y-%m-%d %H:%M:%S")
+    #orders['total_order_cost'] = orders['total_order_cost'].astype('float')
+    cursor = conn.cursor()
+    cursor.execute("SELECT * FROM orders")
+    results = cursor.fetchall()
+    column_names = [column[0] for column in cursor.description]
+    orders = pd.DataFrame(results, columns=column_names)
     orders["order_purchase_timestamp"] = pd.to_datetime(
         orders["order_purchase_timestamp"], format="%Y-%m-%d %H:%M:%S")
     orders['total_order_cost'] = orders['total_order_cost'].astype('float')
@@ -112,12 +118,6 @@ def main():
         """ * **Estacionalidad:** periodos de tiempo con una oscilación en los valores de la variable """)
     st.markdown(
         """ * **Tendencia:** periodos de tiempo con una oscilación en los valores de la variable """)
-    # SIDEBAR
-    with st.sidebar:
-        st.header('For our client:')
-        st.image(logo_olist)
-        st.header('Made with :heart: by:')
-        st.image(logo_racont)
 
     # PLOTEO TIMESERIES
     df_d = df_d.reset_index()
