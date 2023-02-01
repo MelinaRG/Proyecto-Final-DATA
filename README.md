@@ -55,6 +55,10 @@ Contratados por la empresa Brasileña *Olist*, vamos a situarnos en el rol de co
 
 *Funcionalidades de la plataforma*:
 
+[Link Plataforma](https://data-henry.web.app/)
+
+[Link Plataforma](https://data-henry.firebaseapp.com/)
+
 - Home: página de inicio con una breve descripción del proyecto y de nuestra consultora (about us)
 
 - Productos: 4 tarjetas que tienen links que nos llevan a diferentes páginas:
