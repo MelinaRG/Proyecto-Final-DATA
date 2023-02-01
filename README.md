@@ -51,10 +51,21 @@ Contratados por la empresa Brasileña *Olist*, vamos a situarnos en el rol de co
 
 - Presentación de un producto final al cliente .
 
-## :small_orange_diamond: **Funcionalidades de la Plataforma - MVP**
+## :small_blue_diamond: **Plataforma - MVP**
 
+*Link al MVP*
 
-1- `LOGIN`: El acceso a la plataforma es exclusivo para los TAs.
+*Funcionalidades de la plataforma*:
+
+- Home: página de inicio con una breve descripción del proyecto y de nuestra consultora (about us)
+
+- Productos: 4 tarjetas que tienen links que nos llevan a diferentes páginas:
+             Dashboard
+             Modelo de ML
+             Reporte del Análisis de datos
+             Repositorio de Github
+             
+- Equipo de trabajo: integrantes y sus respectivos roles
 
 
 ## :small_blue_diamond: **Equipo de Trabajo**
