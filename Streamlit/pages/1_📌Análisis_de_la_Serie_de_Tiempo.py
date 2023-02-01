@@ -84,12 +84,19 @@ def predicción(df_fechas):
     df_pred = model.predict(df_fechas)
     return df_pred
 
+# PLOTEO #
+
 
 def main():
     # TITULO
     st.title('Análisis de la Serie de tiempo - Ventas de Olist :bar_chart:')
     st.markdown('---')
-
+    # SIDEBAR
+    with st.sidebar:
+        st.subheader('For our client:')
+        st.image(logo_olist, width=60)
+        st.subheader('Made with :heart: by:')
+        st.image(logo_racont, width=90)
     # CARGA DEL DATAFRAME
     with st.spinner('Extrayendo datos...'):
         # DATABASE CONNECTION #
@@ -101,6 +108,10 @@ def main():
     st.markdown(""" Es importante analizar y entender la evolución y el comportamiento de 
                 los datos reales de venta a lo largo del tiempo. Por eso se presentan los componentes
                 de la serie a partir de la predicción correspondiente.""")
+    st.markdown(
+        """ * **Estacionalidad:** periodos de tiempo con una oscilación en los valores de la variable """)
+    st.markdown(
+        """ * **Tendencia:** periodos de tiempo con una oscilación en los valores de la variable """)
     # SIDEBAR
     with st.sidebar:
         st.header('For our client:')
@@ -110,14 +121,15 @@ def main():
 
     # PLOTEO TIMESERIES
     df_d = df_d.reset_index()
-    st.write(df_d)
     ds = df_d[['ds']]
-    st.write(ds)
     df_pred = model.predict(ds)
-    st.plotly_chart(plot_plotly(
-        model, df_pred), sharing="streamlit", theme=None)
-    st.plotly_chart(plot_components_plotly(
-        model, df_pred), sharing="streamlit", theme="streamlit")
+    plot_pred = plot_plotly(model, df_pred)
+    plot_comp = plot_components_plotly(model, df_pred)
+
+    st.subheader('Ploteo Predicción')
+    st.plotly_chart(plot_pred, sharing="streamlit", theme="streamlit")
+    st.subheader('Ploteo Componentes')
+    st.plotly_chart(plot_comp, sharing="streamlit", theme="streamlit")
 
 
 if __name__ == "__main__":

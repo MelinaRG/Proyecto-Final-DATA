@@ -20,7 +20,7 @@ import os
 
 # DATABASE #
 
-@st.experimental_singleton
+@st.experimental_singleton(show_spinner=False)
 def init_connection():
     """Initialize connection to database
 
@@ -38,7 +38,7 @@ with st.spinner('Conectando a la base de datos'):
     conn = init_connection()
 
 
-@st.experimental_memo(ttl=600)
+@st.experimental_memo(ttl=600, show_spinner=False)
 def get_df_transformed():
     """Bring and transform a table from database and convert to dataframe
 
@@ -101,9 +101,31 @@ def df_rango_fechas(start, end):
     ds = pd.DataFrame({'ds': lista_fechas})
     return ds
 
+# PLOTEO #
+
+
+def plot(df_predicted, df_real, ds):
+    """plotea serie de tiempo
+
+    Args:
+        df_predicted (datetime): dataframe con predicciones
+        df_real (datetime): dataframe con valores reales
+        ds (datetime): rango de fechas
+    """
+    #df_real = df_real[df_real.loc[ds['ds']]]
+    trace1 = go.Scatter(
+        x=df_real.index, y=df_real['y'], mode='markers', name='Real', marker=dict(color='mediumpurple'))
+    trace2 = go.Scatter(x=df_predicted['ds'], y=df_predicted['yhat'],
+                        mode='lines', name='Predicción', line=dict(color='red'))
+    fig = go.Figure(data=[trace1, trace2])
+    fig.update_layout(
+        xaxis_title='Fecha',
+        yaxis_title='Ventas')
+    # Show the figure
+    return fig
+
+
 # LAYOUT PRINCIPAL #
-
-
 def main():
     # TITULOS
     st.title('Forcasting de ventas :chart_with_upwards_trend:')
@@ -120,10 +142,10 @@ def main():
 
     # SIDEBAR
     with st.sidebar:
-        st.header('For our client:')
-        st.image(logo_olist)
-        st.header('Made with :heart: by:')
-        st.image(logo_racont)
+        st.subheader('For our client:')
+        st.image(logo_olist, width=60)
+        st.subheader('Made with :heart: by:')
+        st.image(logo_racont, width=90)
 
     st.header('Predicción con rango de fechas')
 
@@ -144,7 +166,9 @@ def main():
         if st.button(label='Aplicar'):
             ds = df_rango_fechas(slider[0], slider[1])
             df_predict = model.predict(ds)
-            st.write(df_predict)
+            st.subheader("Predicción de venta diaria")
+            figura = plot(df_predict, df_d, ds)
+            st.plotly_chart(figura, sharing="streamlit", theme="streamlit")
         else:
             st.write('Click en el boton')
 
