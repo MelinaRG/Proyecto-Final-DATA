@@ -1,46 +1,54 @@
 import streamlit as st
 import base64
+import os
 
-st.set_page_config(page_title='Olist', 
-                   page_icon=None, 
+
+
+#Configuración de la página
+st.set_page_config(page_title='TA Tools - Edades', 
+                   page_icon='📊', 
                    layout="centered", 
-                   initial_sidebar_state="auto", 
+                   initial_sidebar_state="expanded", 
                    menu_items=None)
 
 
 
-def get_base64(bin_file):
-    with open(bin_file, 'rb') as f:
-        data = f.read()
-    return base64.b64encode(data).decode()
+#Aplicar fondo de pantalla
+path_img = os.path.join(os.path.dirname(
+    os.path.abspath(__file__)), "./assets/fondo.png")
 
-
-def set_background(png_file):
-    bin_str = get_base64(png_file)
-    page_bg_img = '''
+import base64
+def add_bg_from_local(image_file):
+    with open(image_file, "rb") as image_file:
+        encoded_string = base64.b64encode(image_file.read())
+    st.markdown(
+    f"""
     <style>
-    body {
-    background-image: url("data:image/png;base64,%s");
-    background-size: cover;
-    }
+    .stApp {{
+        background-image: url(data:image/{"png"};base64,{encoded_string.decode()});
+        background-size: cover
+    }}
     </style>
-    ''' % bin_str
-    st.markdown(page_bg_img, unsafe_allow_html=True)
-
-set_background('./assets/fondo.png')
-
-
-
-st.title('TA Tools :rocket:')
-
-st.header('Esta app proporciona herramientas e información útil para TAs')
-
-st.markdown('En el menú a tu izquierda puedes acceder a distintas métricas de tu grupo:')
+    """,
+    unsafe_allow_html=True
+    )
+add_bg_from_local(path_img)       
 
 
-st.markdown("""
-    Saber qué distribución de edades tienen, sus nacionalidades,
-    dispositivo con el que se conectan y los periféricos que disponen.
-    También conocer qué temas prefieren hablar durante el SUP y algunos
-    datos extra que pueden servirte. 
-""")
+
+path_web = 'https://docs.google.com/document/d/1T5kXNatlGFI60dV4AihWUWGGr4ybV2cU/edit?usp=sharing&ouid=110999774945235708227&rtpof=true&sd=true'
+st.markdown(f'<iframe src="{path_web}" width="950" height="700"></iframe>', unsafe_allow_html=True)
+
+
+
+#Código para visualizar PDF local    
+#path = os.path.join(os.path.dirname(
+#    os.path.abspath(__file__)), "./assets/Análisis - Proyecto Olist.pdf")
+#    
+#def show_pdf(file_path):
+#    with open(file_path,"rb") as f:
+#        base64_pdf = base64.b64encode(f.read()).decode('utf-8')
+#    pdf_display = f'<iframe src="data:application/pdf;base64,{base64_pdf}" width="1000" height="800" class_="iframe-center" type="application/pdf"></iframe>'
+#    st.markdown(pdf_display, unsafe_allow_html=True)
+#
+#show_pdf(path)
