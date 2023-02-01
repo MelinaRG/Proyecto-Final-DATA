@@ -1,7 +1,6 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
-from sqlalchemy import create_engine
 import psycopg2
 import sqlite3 as sql
 import plotly.graph_objects as go

@@ -3,7 +3,6 @@ import streamlit as st
 import os
 import numpy as np
 import pandas as pd
-from sqlalchemy import create_engine
 import psycopg2
 import plotly.graph_objects as go
 from prophet import Prophet
