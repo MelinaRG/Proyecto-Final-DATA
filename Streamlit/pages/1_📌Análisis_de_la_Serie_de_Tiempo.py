@@ -2,17 +2,11 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import psycopg2
-import sqlite3 as sql
-import plotly.graph_objects as go
-from prophet import Prophet
 from prophet.plot import plot_plotly, plot_components_plotly
-from prophet.diagnostics import cross_validation
-from prophet.diagnostics import performance_metrics
-from prophet.plot import plot_cross_validation_metric
-from prophet.serialize import model_to_json, model_from_json
+from prophet.serialize import model_from_json
 from PIL import Image
 import os
-import time
+
 
 
 # DATABASE CALL #

@@ -1,19 +1,12 @@
-import base64
 import streamlit as st
 import os
 import numpy as np
 import pandas as pd
 import psycopg2
 import plotly.graph_objects as go
-from prophet import Prophet
-from prophet.plot import plot_plotly, plot_components_plotly
-from prophet.diagnostics import cross_validation
-from prophet.diagnostics import performance_metrics
-from prophet.plot import plot_cross_validation_metric
-from prophet.serialize import model_to_json, model_from_json
+from prophet.serialize import model_from_json
 from datetime import datetime, timedelta
 from PIL import Image
-import time
 
 
 # DATABASE #
@@ -27,6 +20,7 @@ def init_connection():
     """
 
     return psycopg2.connect(**st.secrets["postgres"])
+
 
 with st.spinner('Conectando a la base de datos'):
     # DATABASE CONNECTION #
