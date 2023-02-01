@@ -25,9 +25,9 @@ def init_connection():
     Returns:
         connection to postgres sql database
     """
-    return psycopg2.connect("host='datapfpostgres.postgres.database.azure.com' port='5432' dbname='postgres' user='meli@datapfpostgres' password='hola123#'")
+    #return psycopg2.connect("host='datapfpostgres.postgres.database.azure.com' port='5432' dbname='postgres' user='meli@datapfpostgres' password='hola123#'")
 
-
+    return psycopg2.connect("host='dpg-cf3enqun6mplnpe950v0-a.oregon-postgres.render.com' port='5432' dbname='olist' user='olist' password='IHCRtcefMFbJIjUMXuUMtcIfpTAEo5d1'")
 # 'postgresql://olist:IHCRtcefMFbJIjUMXuUMtcIfpTAEo5d1@dpg-cf3enqun6mplnpe950v0-a.oregon-postgres.render.com:5432/olist'
 conn = init_connection()
 
