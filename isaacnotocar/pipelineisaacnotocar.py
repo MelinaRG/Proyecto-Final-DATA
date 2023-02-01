@@ -4,17 +4,17 @@ import datetime as dt
 from sqlalchemy import create_engine
 import time
 
-product_cat_name=pd.read_csv("Datasets/product_category_name_translation.csv")
-geolocation=pd.read_csv("Datasets/olist_geolocation_dataset.csv", dtype= {'geolocation_zip_code_prefix': str})
-marketing=pd.read_csv("Datasets/olist_marketing_qualified_leads_dataset.csv")
-closed_deals=pd.read_csv("Datasets/olist_closed_deals_dataset.csv")
-sellers=pd.read_csv("Datasets/olist_sellers_dataset.csv",dtype={"seller_zip_code_prefix": str})
-customers=pd.read_csv("Datasets/olist_customers_dataset.csv",dtype={"customer_zip_code_prefix": str})
-orders=pd.read_csv("Datasets/olist_orders_dataset.csv")
-payments=pd.read_csv("Datasets/olist_order_payments_dataset.csv")
-reviews=pd.read_csv("Datasets/olist_order_reviews_dataset.csv")
-products=pd.read_csv("Datasets/olist_products_dataset.csv")
-items=pd.read_csv("Datasets/olist_order_items_dataset.csv")
+product_cat_name=pd.read_csv("isaacnotocar/Datasets/product_category_name_translation.csv")
+geolocation=pd.read_csv("isaacnotocar/Datasets/olist_geolocation_dataset.csv", dtype= {'geolocation_zip_code_prefix': str})
+marketing=pd.read_csv("isaacnotocar/Datasets/olist_marketing_qualified_leads_dataset.csv")
+closed_deals=pd.read_csv("isaacnotocar/Datasets/olist_closed_deals_dataset.csv")
+sellers=pd.read_csv("isaacnotocar/Datasets/olist_sellers_dataset.csv",dtype={"seller_zip_code_prefix": str})
+customers=pd.read_csv("isaacnotocar/Datasets/olist_customers_dataset.csv",dtype={"customer_zip_code_prefix": str})
+orders=pd.read_csv("isaacnotocar/Datasets/olist_orders_dataset.csv")
+payments=pd.read_csv("isaacnotocar/Datasets/olist_order_payments_dataset.csv")
+reviews=pd.read_csv("isaacnotocar/Datasets/olist_order_reviews_dataset.csv")
+products=pd.read_csv("isaacnotocar/Datasets/olist_products_dataset.csv")
+items=pd.read_csv("isaacnotocar/Datasets/olist_order_items_dataset.csv")
 
 
 #Obtiene el tiempo actual
@@ -24,9 +24,7 @@ start_time = time.time()
 #Product Category Name Translation
 
 def etl_product_cat(product_cat_name):
-    #product_cat_name=product_cat_name.append({"product_category_name" : "pc_gamer" , "product_category_name_english" : "pc_gamer"} , ignore_index=True)
-    #product_cat_name=product_cat_name.append({"product_category_name" : "portateis_cozinha_e_preparadores_de_alimentos" , "product_category_name_english" : "kitchen_and_food_preparation_racks"} , ignore_index=True)
-    #product_cat_name=product_cat_name.append({"product_category_name" : "outras" , "product_category_name_english" : "others"} , ignore_index=True)
+    
     product_cat_nameex=pd.DataFrame({"product_category_name" : ["pc_gamer","portateis_cozinha_e_preparadores_de_alimentos","outras"] \
                 , "product_category_name_english" : ["pc_gamer","kitchen_and_food_preparation_racks","other"]})
     product_cat_name=pd.concat([product_cat_name,product_cat_nameex],ignore_index= True)
@@ -45,9 +43,9 @@ def etl_product_cat(product_cat_name):
 # Geolocation
 def etl_geolocation(geolocation, sellers, customers):
 
-    df_coord_estados = pd.read_csv('./datasets_auxiliares/coordenadas_estados.csv',sep=';')
-    df_coord_ciudades = pd.read_csv('./datasets_auxiliares/coordenadas_ciudades.csv')
-    br_info = pd.read_csv('./datasets_auxiliares/br_info.csv')
+    df_coord_estados = pd.read_csv('isaacnotocar/datasets_auxiliares/coordenadas_estados.csv',sep=';')
+    df_coord_ciudades = pd.read_csv('isaacnotocar/datasets_auxiliares/coordenadas_ciudades.csv')
+    br_info = pd.read_csv('isaacnotocar/datasets_auxiliares/br_info.csv')
 
 
     # Renombre de columnas
@@ -109,14 +107,13 @@ def etl_marketing(marketing):
 # Sellers
 
 def etl_sellers():
-    sellers=pd.read_csv("Datasets/olist_sellers_dataset.csv",dtype={"seller_zip_code_prefix": str})
+    sellers=pd.read_csv("isaacnotocar/Datasets/olist_sellers_dataset.csv",dtype={"seller_zip_code_prefix": str})
 
     sellers.drop(columns=["seller_city","seller_state"],axis=1,inplace=True)
 
     mergeauxiliar=pd.merge(left=sellers,right=closed_deals,how="outer",on="seller_id")
     sellers=mergeauxiliar.iloc[:,0:2]
 
-    sellers['seller_zip_code_prefix'] = sellers['seller_zip_code_prefix'].astype('string')
 
     engine = create_engine('postgresql://olist:IHCRtcefMFbJIjUMXuUMtcIfpTAEo5d1@dpg-cf3enqun6mplnpe950v0-a.oregon-postgres.render.com:5432/olist')
 
@@ -148,7 +145,7 @@ def etl_closed_deals(closed_deals):
 # Customers
 
 def etl_customers():
-    customers=pd.read_csv("Datasets/olist_customers_dataset.csv",dtype={"customer_zip_code_prefix": str})
+    customers=pd.read_csv("isaacnotocar/Datasets/olist_customers_dataset.csv",dtype={"customer_zip_code_prefix": str})
 
     customers.drop(columns=["customer_city","customer_state"],axis=1,inplace=True)
 
@@ -164,7 +161,7 @@ def etl_customers():
 # Orders
 
 def etl_orders(orders):
-    payments=pd.read_csv("Datasets/olist_order_payments_dataset.csv")
+    payments=pd.read_csv("isaacnotocar/Datasets/olist_order_payments_dataset.csv")
     
     orders["order_purchase_timestamp"]=pd.to_datetime(orders["order_purchase_timestamp"],format="%Y-%m-%d %H:%M:%S")
     orders["order_approved_at"]=pd.to_datetime(orders["order_approved_at"],format="%Y-%m-%d %H:%M:%S")
@@ -257,6 +254,7 @@ def etl_products(products):
     products["product_photos_qty"].fillna(0.0,inplace=True)
     products["product_photos_qty"] = products["product_photos_qty"] .astype("int")
     products["product_category_name"]=products["product_category_name"].str.replace("_"," ")
+    products["product_category_name"]=products["product_category_name"].fillna("outras")
 
     engine = create_engine('postgresql://olist:IHCRtcefMFbJIjUMXuUMtcIfpTAEo5d1@dpg-cf3enqun6mplnpe950v0-a.oregon-postgres.render.com:5432/olist')
 
