@@ -27,7 +27,7 @@ with st.spinner('Conectando a la base de datos'):
     conn = init_connection()
 
 
-@st.experimental_memo(ttl=600, show_spinner=False)
+@st.experimental_memo(show_spinner=False)
 def get_df_transformed():
     """Bring and transform a table from database and convert to dataframe
 
