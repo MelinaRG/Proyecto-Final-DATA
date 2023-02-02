@@ -59,7 +59,7 @@ Contratados por la empresa Brasileña _Olist_, vamos a situarnos en el rol de co
 
 _Funcionalidades de la plataforma_: (Acceda a la app web haciendo click en el gif)
 
-<a href="https://data-henry.web.app/"> 
+<a href="https://data-henry.web.app/" target="_blank"> 
 <img src="./web-mvp.gif">
 </a>
 
