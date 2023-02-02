@@ -35,10 +35,7 @@ def get_df_transformed():
     Returns:
         DataFrame: daily orders
     """
-    #orders = pd.read_sql_table('orders', conn)
-    # orders["order_purchase_timestamp"] = pd.to_datetime(
-    # orders["order_purchase_timestamp"], format="%Y-%m-%d %H:%M:%S")
-    #orders['total_order_cost'] = orders['total_order_cost'].astype('float')
+
     cursor = conn.cursor()
     cursor.execute("SELECT * FROM orders")
     results = cursor.fetchall()
