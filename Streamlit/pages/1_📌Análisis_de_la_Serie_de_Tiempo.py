@@ -107,7 +107,7 @@ def main():
     st.markdown(
         """ * **Estacionalidad:** periodos de tiempo con una oscilación en los valores de la variable """)
     st.markdown(
-        """ * **Tendencia:** periodos de tiempo con una oscilación en los valores de la variable """)
+        """ * **Tendencia:** comportamiento de la variable en el largo plazo""")
 
     # PLOTEO TIMESERIES
     df_d = df_d.reset_index()
